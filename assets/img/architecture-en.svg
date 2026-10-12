@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 300" width="880" height="300"
+     role="img" aria-labelledby="archTitleEn archDescEn">
+  <title id="archTitleEn">Architecture of the telemedicine kit</title>
+  <desc id="archDescEn">Medical devices and sensors at the patient's side send data to an edge or fog node, which buffers, validates and pre-processes it. The node then posts measurements through a REST API to the medical information system, which a remote clinician can access.</desc>
+  <style>
+    .box { fill: #ffffff; stroke: #0b6271; stroke-width: 2; }
+    .box-accent { fill: #e3f0f2; stroke: #0b6271; stroke-width: 2; }
+    .t { font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif; fill: #0f1f28; }
+    .h { font-size: 17px; font-weight: 650; }
+    .s { font-size: 13px; fill: #475a66; }
+    .lbl { font-size: 12px; fill: #0b6271; font-weight: 650; letter-spacing: .04em; }
+    .arrow { stroke: #0b6271; stroke-width: 2.5; fill: none; }
+    @media (prefers-color-scheme: dark) {
+      .box { fill: #141f26; stroke: #5ecfc4; }
+      .box-accent { fill: #15292e; stroke: #5ecfc4; }
+      .t { fill: #e9f1f4; }
+      .s { fill: #a7bcc6; }
+      .lbl { fill: #8ae0d7; }
+      .arrow { stroke: #5ecfc4; }
+    }
+  </style>
+  <defs>
+    <marker id="headEn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <g class="arrow" color="#0b6271">
+    <line x1="232" y1="120" x2="316" y2="120" marker-end="url(#headEn)"/>
+    <line x1="564" y1="120" x2="648" y2="120" marker-end="url(#headEn)"/>
+    <line x1="760" y1="172" x2="760" y2="222" marker-end="url(#headEn)"/>
+  </g>
+
+  <rect class="box" x="16" y="56" width="216" height="128" rx="12"/>
+  <text class="t h" x="36" y="88">Patient-side devices</text>
+  <text class="t s" x="36" y="112">Sensors: pulse, SpO2,</text>
+  <text class="t s" x="36" y="132">temperature, ECG, blood</text>
+  <text class="t s" x="36" y="152">pressure, weight, glucose</text>
+  <text class="t s" x="36" y="172">BLE · USB · UART</text>
+
+  <rect class="box-accent" x="316" y="40" width="248" height="160" rx="12"/>
+  <text class="t h" x="336" y="72">Edge / fog node</text>
+  <text class="t s" x="336" y="96">Raspberry Pi or ESP32</text>
+  <text class="t s" x="336" y="116">next to the patient:</text>
+  <text class="t s" x="336" y="136">capture, validation, filtering,</text>
+  <text class="t s" x="336" y="156">store-and-forward buffer,</text>
+  <text class="t s" x="336" y="176">local encryption</text>
+
+  <rect class="box" x="648" y="56" width="216" height="116" rx="12"/>
+  <text class="t h" x="668" y="88">MIS</text>
+  <text class="t s" x="668" y="112">Medical information</text>
+  <text class="t s" x="668" y="132">system: patient record,</text>
+  <text class="t s" x="668" y="152">measurement history</text>
+
+  <rect class="box" x="648" y="222" width="216" height="62" rx="12"/>
+  <text class="t h" x="668" y="252">Remote clinician</text>
+  <text class="t s" x="668" y="272">MIS web interface</text>
+
+  <text class="lbl" x="252" y="110">DATA</text>
+  <text class="lbl" x="576" y="104">REST API</text>
+  <text class="lbl" x="588" y="142">JSON</text>
+</svg>

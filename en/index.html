@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beowulf: Open Telemedicine Kit — student competition</title>
+<meta name="description" content="Beowulf: Open Telemedicine Kit — a student competition organised by OHIN and the National University of Water and Environmental Engineering (NUWEE), Rivne, Ukraine. Applications close on 5 November 2026.">
+<link rel="canonical" href="https://zhukovskyy.github.io/beowulf-2026/en/">
+<link rel="alternate" hreflang="uk" href="https://zhukovskyy.github.io/beowulf-2026/">
+<link rel="alternate" hreflang="en" href="https://zhukovskyy.github.io/beowulf-2026/en/">
+<link rel="alternate" hreflang="x-default" href="https://zhukovskyy.github.io/beowulf-2026/en/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Beowulf: Open Telemedicine Kit">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="uk_UA">
+<meta property="og:url" content="https://zhukovskyy.github.io/beowulf-2026/en/">
+<meta property="og:title" content="Beowulf: Open Telemedicine Kit — student competition">
+<meta property="og:description" content="Student teams build a telemedicine kit on a fog/edge architecture: measurements taken at the patient's side and delivered through an API to a medical information system. Applications close 5 November 2026.">
+<meta property="og:image" content="https://zhukovskyy.github.io/beowulf-2026/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Beowulf: Open Telemedicine Kit — student competition, OHIN and NUWEE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Beowulf: Open Telemedicine Kit — student competition">
+<meta name="twitter:description" content="A telemedicine kit on a fog/edge architecture for communities short of doctors. Applications close 5 November 2026.">
+<meta name="twitter:image" content="https://zhukovskyy.github.io/beowulf-2026/assets/img/og-image.png">
+<meta name="theme-color" content="#0b6271">
+
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/img/favicon.svg">
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="lang-bar">
+  <div class="wrap">
+    <p class="tagline">Student competition · 2026–2027</p>
+    <nav class="lang-switch" aria-label="Language selection">
+      <a href="../" lang="uk" hreflang="uk">UA<span class="visually-hidden"> — українська версія цієї сторінки</span></a>
+      <span aria-current="true" lang="en">EN</span>
+    </nav>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <p class="eyebrow">Open competition for student teams</p>
+    <h1>Beowulf: Open Telemedicine Kit</h1>
+    <p class="lede">Student teams design and build a telemedicine kit from components available on the open market — so that health measurements can be taken locally, in the community, and reach a remote clinician straight away.</p>
+
+    <ul class="org-list">
+      <li>
+        <span class="role">Organisers</span>
+        <strong>OHIN</strong> — [full name of OHIN] — and the <strong>National University of Water and Environmental Engineering (NUWEE)</strong>, Rivne, Ukraine, Department of Software Engineering and Artificial Intelligence
+      </li>
+      <li>
+        <span class="role">Partner</span>
+        <strong>Seven Informatics</strong> — visiting professor <strong>John Chelsom</strong>
+      </li>
+    </ul>
+
+    <div class="btn-row">
+      <a class="btn" href="[посилання на Google Form]">Apply now</a>
+      <p class="btn-note">Applications close on 5 November 2026</p>
+    </div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Page contents">
+  <div class="wrap">
+    <ol>
+      <li><a href="#about">About</a></li>
+      <li><a href="#eligibility">Who can enter</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#submit">What to submit</a></li>
+      <li><a href="#proposal">Proposal structure</a></li>
+      <li><a href="#equipment">Equipment</a></li>
+      <li><a href="#api">MIS API</a></li>
+      <li><a href="#criteria">Judging criteria</a></li>
+      <li><a href="#contacts">Contacts &amp; FAQ</a></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+<div class="wrap">
+
+<section id="about" aria-labelledby="about-h">
+  <h2 id="about-h">About the competition</h2>
+  <p>Teams are asked to build a telemedicine kit comparable in purpose to IDIS2GO, but assembled from components available on the open market and from whatever is at hand. The point is not to clone an existing product — it is to find an engineering solution within a realistic budget.</p>
+  <p>The kit follows a <strong>fog/edge architecture</strong>: data from medical devices is collected and pre-processed next to the patient, then sent through an API to the <strong>medical information system (MIS)</strong> developed in our earlier project.</p>
+  <p>The goal is a solution for communities that are short of doctors: readings are taken on site by a nurse, a paramedic or the patient, and become available to a remote clinician immediately.</p>
+
+  <figure class="diagram">
+    <div class="diagram-scroll" tabindex="0" role="group" aria-label="Architecture diagram, scrolls horizontally">
+      <img src="../assets/img/architecture-en.svg" width="880" height="300"
+           alt="Architecture diagram: medical devices and sensors at the patient's side send data to an edge or fog node (Raspberry Pi or ESP32) that captures, validates and buffers measurements, then posts them as JSON through a REST API to the medical information system, where a remote clinician reads them.">
+    </div>
+    <figcaption>The data path: patient-side devices → edge/fog node → MIS via API → remote clinician.</figcaption>
+  </figure>
+
+  <div class="grid cols-3">
+    <div class="card">
+      <h3>Measured on site</h3>
+      <p>Readings are taken where the patient is, with no trip to the city.</p>
+    </div>
+    <div class="card">
+      <h3>Processed next to the patient</h3>
+      <p>The edge node filters, validates and stores data even on a poor connection.</p>
+    </div>
+    <div class="card">
+      <h3>Reviewed remotely</h3>
+      <p>The API carries the data into the MIS, where it becomes part of the patient record.</p>
+    </div>
+  </div>
+</section>
+
+<section id="eligibility" aria-labelledby="eligibility-h">
+  <h2 id="eligibility-h">Who can enter</h2>
+  <div class="grid cols-2">
+    <div class="card">
+      <h3>Participants</h3>
+      <p>Students of Ukrainian higher education institutions, from any discipline: IT, electronics, biomedical engineering, medicine, design.</p>
+    </div>
+    <div class="card">
+      <h3>Team size</h3>
+      <p>Two to five people. A faculty mentor may advise the team; the mentor does not count towards the limit and does not do the students' work.</p>
+    </div>
+  </div>
+  <p>Interdisciplinary teams and teams drawn from several universities are welcome: the kit calls for circuit design, software engineering and an understanding of the clinical workflow alike.</p>
+</section>
+
+<section id="timeline" aria-labelledby="timeline-h">
+  <h2 id="timeline-h">Timeline and deadlines</h2>
+  <ol class="timeline">
+    <li>
+      <span class="when">By 5 November 2026</span>
+      <p>Submit the application form together with a project proposal.</p>
+      <p class="meta">Form plus proposal in PDF.</p>
+    </li>
+    <li>
+      <span class="when">By 10 November 2026</span>
+      <p>Selected teams are announced; equipment is purchased and&nbsp;/&nbsp;or funded against the approved applications.</p>
+      <p class="meta">What gets approved is the equipment list the team submitted in its proposal.</p>
+    </li>
+    <li>
+      <span class="when">November – December 2026</span>
+      <p>Prototype development with mentor support.</p>
+      <p class="meta">Regular sessions with mentors from the organisers and the partner.</p>
+    </li>
+    <li>
+      <span class="when">December 2026 – January 2027</span>
+      <p>The competition itself: hackathon and final demonstration in Rivne.</p>
+      <p class="meta">The exact date will be announced later.</p>
+    </li>
+    <li>
+      <span class="when">Spring 2027</span>
+      <p>Presentation of the best solutions in Oxford.</p>
+      <p class="meta">Subject to funding and organisational arrangements.</p>
+    </li>
+  </ol>
+</section>
+
+<section id="submit" aria-labelledby="submit-h">
+  <h2 id="submit-h">What to submit</h2>
+  <div class="grid cols-2">
+    <div class="card">
+      <h3>1. The completed application form</h3>
+      <p><a href="[посилання на Google Form]">Application form</a> — team contacts and basic details of the project.</p>
+    </div>
+    <div class="card">
+      <h3>2. A project proposal in PDF</h3>
+      <p>A single PDF following the structure below. Written in Ukrainian or English.</p>
+    </div>
+  </div>
+
+  <div class="note">
+    <p><strong>Length:</strong> no more than 10 A4 pages, i.e. up to 18,000 characters including spaces (about 1,800 characters per page, 12–14&nbsp;pt type, 2&nbsp;cm margins). Diagrams, photographs and tables count towards the page limit.</p>
+  </div>
+
+  <div class="todo">
+    <p><span class="tag">TODO</span> Before the site goes live, replace <code>[посилання на Google Form]</code> with the real form address (the “Apply now” button in the header and the link in this section).</p>
+  </div>
+</section>
+
+<section id="proposal" aria-labelledby="proposal-h">
+  <h2 id="proposal-h">Structure of the project proposal</h2>
+  <p>Keep this numbering — the judges compare proposals section by section. The block below can be copied as a table of contents.</p>
+  <div class="proposal">
+    <ol>
+      <li><strong>Project title and team.</strong> Members, roles, contacts, mentor.</li>
+      <li><strong>Problem and target user.</strong> Who the kit is for and the conditions it will work in.</li>
+      <li><strong>Measurements.</strong> Which parameters the kit will measure (for example: temperature, pulse, SpO2, blood pressure, ECG, spirometry, glucose, weight) and why these in particular.</li>
+      <li><strong>Architecture.</strong> Devices → edge/fog node → MIS via API. A diagram is mandatory.</li>
+      <li><strong>Equipment list.</strong> A table with the columns: “Component&nbsp;/&nbsp;model”, “Purpose”, “Quantity”, “Approximate price, UAH”, “Shop link”, “Already available or to be purchased”. A total figure is required.</li>
+      <li><strong>Software.</strong> Languages, frameworks, data format, processing on the edge node, security and personal data protection.</li>
+      <li><strong>Integration with the MIS API.</strong> Which data the team plans to send, and in what form.</li>
+      <li><strong>Work plan.</strong> A week-by-week schedule up to the final, and how tasks are split within the team.</li>
+      <li><strong>Risks and alternatives.</strong> What you will do if a component turns out to be unavailable.</li>
+      <li><strong>Expected outcome.</strong> What exactly will be demonstrated at the competition.</li>
+    </ol>
+  </div>
+
+  <h3>Sample equipment table (item 5)</h3>
+  <div class="table-scroll">
+    <table>
+      <caption>An example of how to lay out the equipment list, with a total.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Component / model</th>
+          <th scope="col">Purpose</th>
+          <th scope="col">Qty</th>
+          <th scope="col">Approx. price, UAH</th>
+          <th scope="col">Shop link</th>
+          <th scope="col">Available or to buy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Raspberry Pi 4, 4 GB</td>
+          <td>Edge/fog node, delivery to the MIS</td>
+          <td>1</td>
+          <td>—</td>
+          <td>—</td>
+          <td>to buy</td>
+        </tr>
+        <tr>
+          <td>MAX30102</td>
+          <td>Pulse and SpO2</td>
+          <td>2</td>
+          <td>—</td>
+          <td>—</td>
+          <td>available</td>
+        </tr>
+        <tr>
+          <td>…</td>
+          <td>…</td>
+          <td>…</td>
+          <td>…</td>
+          <td>…</td>
+          <td>…</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="equipment" aria-labelledby="equipment-h">
+  <h2 id="equipment-h">Equipment and budget</h2>
+  <p>The organisers purchase or fund components against approved applications; decisions are made by <strong>10 November 2026</strong> on the basis of the list given in the project proposal. The list must therefore be specific: model, quantity, price, shop link.</p>
+  <p><strong>The budget per team is set by the jury</strong>, depending on how well the list is justified and how demanding the design is.</p>
+  <p>Preference goes to solutions built from affordable, widely available and <strong>repairable</strong> components: the kit has to stay serviceable in a community with no service centre nearby.</p>
+
+  <div class="grid cols-2">
+    <div class="card">
+      <h3>Computing</h3>
+      <ul>
+        <li>Microcontrollers: ESP32, Arduino</li>
+        <li>Single-board computers: Raspberry Pi</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Measurement</h3>
+      <ul>
+        <li>MAX30102 — pulse and SpO2</li>
+        <li>AD8232 — ECG</li>
+        <li>MLX90614 — temperature</li>
+        <li>Off-the-shelf consumer medical devices with Bluetooth (blood pressure monitor, glucometer, scales)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note">
+    <p>These are <strong>examples only</strong>, not a required list. If your design needs different sensors or a different platform, justify the choice in the proposal.</p>
+  </div>
+</section>
+
+<section id="api" aria-labelledby="api-h">
+  <h2 id="api-h">The medical information system API</h2>
+  <p><strong>API documentation will be provided to the selected teams.</strong> Until then, the general integration model below is enough for planning.</p>
+
+  <div class="card">
+    <h3>What is already known</h3>
+    <ul>
+      <li><strong>Protocol:</strong> a REST API exchanging JSON over HTTPS.</li>
+      <li><strong>Authentication:</strong> a token issued to the team; keys must not be stored in plain text in firmware or source code.</li>
+      <li><strong>Direction:</strong> the edge/fog node sends measurements to the MIS, which links them to the patient record.</li>
+    </ul>
+  </div>
+
+  <h3>Indicative shape of a single measurement</h3>
+  <p>The snippet below only illustrates what a measurement contains, so that teams can design their edge-node data format. Final field names, endpoints and authentication rules will come from the documentation.</p>
+  <pre><code>{
+  "patient_ref": "&lt;patient identifier in the MIS&gt;",
+  "device": "&lt;device or sensor model&gt;",
+  "measured_at": "2026-11-20T09:14:00+02:00",
+  "observations": [
+    { "code": "spo2",       "value": 97,  "unit": "%" },
+    { "code": "heart_rate", "value": 74,  "unit": "bpm" },
+    { "code": "temp_body",  "value": 36.8, "unit": "Cel" }
+  ]
+}</code></pre>
+
+  <div class="todo">
+    <p><span class="tag">TODO</span> Link to the API documentation: <code>[посилання на документацію API]</code>. Final endpoints, the authentication scheme and the list of observation codes will be added here once the documentation is published — no invented endpoints are given on this page on purpose.</p>
+  </div>
+</section>
+
+<section id="criteria" aria-labelledby="criteria-h">
+  <h2 id="criteria-h">Judging criteria</h2>
+  <div class="grid cols-3">
+    <div class="card">
+      <h3>A working prototype</h3>
+      <p>The kit genuinely measures and transmits data, rather than staying on paper.</p>
+    </div>
+    <div class="card">
+      <h3>Quality of MIS integration</h3>
+      <p>How correctly, completely and reliably measurements travel through the API.</p>
+    </div>
+    <div class="card">
+      <h3>Availability and cost of components</h3>
+      <p>Whether the kit can be reproduced in a community for sensible money.</p>
+    </div>
+    <div class="card">
+      <h3>Engineering quality of code and documentation</h3>
+      <p>Project structure, readability, and build-and-run instructions.</p>
+    </div>
+    <div class="card">
+      <h3>Usability for health workers</h3>
+      <p>Whether a nurse or paramedic can operate the kit without an engineer at hand.</p>
+    </div>
+    <div class="card">
+      <h3>Presentation</h3>
+      <p>How clearly the solution is demonstrated and defended before the jury.</p>
+    </div>
+  </div>
+</section>
+
+<section id="safety" aria-labelledby="safety-h">
+  <h2 id="safety-h">Important</h2>
+  <div class="warning">
+    <p><strong>These prototypes are educational and are not certified medical devices.</strong> They must not be used to diagnose or treat real patients without the relevant approvals, ethics clearance and supervision by medical professionals. For testing, use signal simulators, phantoms, or voluntary measurements among team members.</p>
+  </div>
+</section>
+
+<section id="contacts" aria-labelledby="contacts-h">
+  <h2 id="contacts-h">Contacts</h2>
+  <div class="card contact-card">
+    <dl>
+      <dt>Competition coordinator</dt>
+      <dd><strong>Viktor Zhukovskyy</strong>, PhD, Associate Professor</dd>
+      <dt>Department</dt>
+      <dd>Software Engineering and Artificial Intelligence, NUWEE, Rivne, Ukraine</dd>
+      <dt>E-mail</dt>
+      <dd>[e-mail]</dd>
+      <dt>Phone / Telegram</dt>
+      <dd>[телефон / Telegram]</dd>
+    </dl>
+  </div>
+
+  <h3 id="faq">Frequently asked questions</h3>
+  <div class="faq">
+    <details>
+      <summary>Can I enter on my own, without a team?</summary>
+      <p>No. The minimum is two people and the maximum is five. The kit combines hardware, software and integration work, so a division of roles is part of the rules.</p>
+    </details>
+    <details>
+      <summary>Do we have to buy the equipment ourselves?</summary>
+      <p>No. The organisers purchase or fund components against approved applications by 10 November 2026. If you already own some of the parts, mark them as available in the table.</p>
+    </details>
+    <details>
+      <summary>Must we use ESP32, Raspberry Pi and the sensors listed?</summary>
+      <p>No — those are examples of typical components. You may use any available solution, including off-the-shelf Bluetooth consumer devices, as long as you justify the choice and show the kit can be reproduced.</p>
+    </details>
+    <details>
+      <summary>Which language should the proposal be written in?</summary>
+      <p>Ukrainian or English. English is more convenient for the partner and for a possible presentation in Oxford, but the choice of language does not affect scoring.</p>
+    </details>
+    <details>
+      <summary>When do teams get access to the MIS API?</summary>
+      <p>Documentation and test credentials are given to the selected teams after 10 November 2026. At the application stage it is enough to describe which data you plan to send, and in what form.</p>
+    </details>
+    <details>
+      <summary>Can we continue a project we started earlier?</summary>
+      <p>Yes, provided the proposal states clearly what existed before the competition and what will be built during it. The judges assess the progress made within the competition.</p>
+    </details>
+  </div>
+</section>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Beowulf: Open Telemedicine Kit</strong> — student competition, 2026–2027.</p>
+    <p>Organisers: OHIN and NUWEE, Department of Software Engineering and Artificial Intelligence (Rivne, Ukraine). Partner: Seven Informatics.</p>
+    <p>The prototypes are educational and are not certified medical devices. · <a href="../" hreflang="uk" lang="uk">Українська версія</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
