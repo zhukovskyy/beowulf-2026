@@ -16,14 +16,14 @@
 <meta property="og:locale:alternate" content="uk_UA">
 <meta property="og:url" content="https://zhukovskyy.github.io/beowulf-2026/en/">
 <meta property="og:title" content="Beowulf: Open Telemedicine Kit — student competition">
-<meta property="og:description" content="Student teams build a telemedicine kit on a fog/edge architecture: measurements taken at the patient's side and delivered through an API to a medical information system. Applications close 5 November 2026.">
+<meta property="og:description" content="Student teams build a telemedicine kit on an edge → fog → cloud architecture: measurements taken at the patient's side, brought together on a fog node and delivered through an API to a medical information system. Applications close 5 November 2026.">
 <meta property="og:image" content="https://zhukovskyy.github.io/beowulf-2026/assets/img/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Beowulf: Open Telemedicine Kit — student competition, OHIN and NUWEE">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Beowulf: Open Telemedicine Kit — student competition">
-<meta name="twitter:description" content="A telemedicine kit on a fog/edge architecture for communities short of doctors. Applications close 5 November 2026.">
+<meta name="twitter:description" content="A telemedicine kit on an edge → fog → cloud architecture for communities short of doctors. Applications close 5 November 2026.">
 <meta name="twitter:image" content="https://zhukovskyy.github.io/beowulf-2026/assets/img/og-image.png">
 <meta name="theme-color" content="#0b6271">
 
@@ -89,16 +89,32 @@
 
 <section id="about" aria-labelledby="about-h">
   <h2 id="about-h">About the competition</h2>
-  <p>Teams are asked to build a telemedicine kit comparable in purpose to IDIS2GO, but assembled from components available on the open market and from whatever is at hand. The point is not to clone an existing product — it is to find an engineering solution within a realistic budget.</p>
-  <p>The kit follows a <strong>fog/edge architecture</strong>: data from medical devices is collected and pre-processed next to the patient, then sent through an API to the <strong>medical information system (MIS)</strong> developed in our earlier project.</p>
+  <p>Teams are asked to build a telemedicine kit comparable in purpose to off-the-shelf systems such as IDIS2GO, but assembled from components available on the open market and from whatever is at hand. The point is not to clone an existing product — it is to find an engineering solution within a realistic budget.</p>
+
+  <div class="card">
+    <h3>Comparable systems for reference</h3>
+    <p>Look at what already exists before designing your own. These are reference points for purpose and range of measurements, not templates to copy: their price and their closed nature are precisely the problem we want to get around.</p>
+    <ul>
+      <li><a href="https://idis2go.net/" rel="noopener">IDIS2GO</a> (SK-Telemed, Austria) — a portable diagnostic station: ECG, blood pressure, SpO2, glucose, spirometry, temperature.</li>
+      <li><a href="https://www.tytocare.com/" rel="noopener">TytoCare</a> — a handheld device for remote examination: stethoscope, otoscope, camera, thermometer.</li>
+      <li><a href="https://medwand.com/" rel="noopener">MedWand</a> — a multi-sensor device the size of a computer mouse: temperature, SpO2, ECG, auscultation, camera.</li>
+      <li><a href="https://github.com/Protocentral/protocentral_healthypi_v4" rel="noopener">HealthyPi</a> (ProtoCentral) — a fully open-source vital signs monitor built on the Raspberry Pi and ESP32: ECG, respiration, PPG, SpO2, temperature. The closest example to our format, with open code and schematics.</li>
+    </ul>
+  </div>
+  <p>The kit is built on an <strong>edge → fog → cloud</strong> architecture:</p>
+  <ul>
+    <li><strong>Edge</strong> — the measuring devices themselves: a sensor or a ready-made instrument that takes a reading at the patient's side and does the first processing of the signal.</li>
+    <li><strong>Fog</strong> — the node that receives and <strong>brings together the data from all those devices</strong>, validates it, keeps it when the link drops, and can compute things locally.</li>
+    <li><strong>Cloud</strong> — the <strong>medical information system (MIS)</strong> developed in our earlier project; the fog node sends measurements there through an API.</li>
+  </ul>
   <p>The goal is a solution for communities that are short of doctors: readings are taken on site by a nurse, a paramedic or the patient, and become available to a remote clinician immediately.</p>
 
   <figure class="diagram">
     <div class="diagram-scroll" tabindex="0" role="group" aria-label="Architecture diagram, scrolls horizontally">
       <img src="../assets/img/architecture-en.svg" width="880" height="300"
-           alt="Architecture diagram: medical devices and sensors at the patient's side send data to an edge or fog node (Raspberry Pi or ESP32) that captures, validates and buffers measurements, then posts them as JSON through a REST API to the medical information system, where a remote clinician reads them.">
+           alt="Architecture diagram: the edge layer is sensors and ready-made instruments at the patient's side; they send data over BLE, USB or UART to a fog node (Raspberry Pi or mini-PC) that brings the devices together, validates and buffers measurements and runs local analytics; the node then posts the data as JSON through a REST API to the medical information system in the cloud, where a remote clinician reads it.">
     </div>
-    <figcaption>The data path: patient-side devices → edge/fog node → MIS via API → remote clinician.</figcaption>
+    <figcaption>The data path: edge devices → fog node → MIS in the cloud via API → remote clinician.</figcaption>
   </figure>
 
   <div class="grid cols-3">
@@ -108,12 +124,23 @@
     </div>
     <div class="card">
       <h3>Processed next to the patient</h3>
-      <p>The edge node filters, validates and stores data even on a poor connection.</p>
+      <p>The fog node brings all the devices together, filters and stores data even on a poor connection.</p>
     </div>
     <div class="card">
       <h3>Reviewed remotely</h3>
       <p>The API carries the data into the MIS, where it becomes part of the patient record.</p>
     </div>
+  </div>
+
+  <div class="card">
+    <h3>Comparable systems for reference</h3>
+    <p>Look at what already exists before designing your own. These are reference points for purpose and range of measurements, not templates to copy: their price and their closed nature are precisely the problem we want to get around.</p>
+    <ul>
+      <li><a href="https://idis2go.net/" rel="noopener">IDIS2GO</a> (SK-Telemed, Austria) — a portable diagnostic station: ECG, blood pressure, SpO2, glucose, spirometry, temperature.</li>
+      <li><a href="https://www.tytocare.com/" rel="noopener">TytoCare</a> — a handheld device for remote examination: stethoscope, otoscope, camera, thermometer.</li>
+      <li><a href="https://medwand.com/" rel="noopener">MedWand</a> — a multi-sensor device the size of a computer mouse: temperature, SpO2, ECG, auscultation, camera.</li>
+      <li><a href="https://github.com/Protocentral/protocentral_healthypi_v4" rel="noopener">HealthyPi</a> (ProtoCentral) — a fully open-source vital signs monitor built on the Raspberry Pi and ESP32: ECG, respiration, PPG, SpO2, temperature. The closest example to our format, with open code and schematics.</li>
+    </ul>
   </div>
 </section>
 
@@ -193,9 +220,10 @@
       <li><strong>Project title and team.</strong> Members, roles, contacts, mentor.</li>
       <li><strong>Problem and target user.</strong> Who the kit is for and the conditions it will work in.</li>
       <li><strong>Measurements.</strong> Which parameters the kit will measure (for example: temperature, pulse, SpO2, blood pressure, ECG, spirometry, glucose, weight) and why these in particular.</li>
-      <li><strong>Architecture.</strong> Devices → edge/fog node → MIS via API. A diagram is mandatory.</li>
+      <li><strong>Architecture.</strong> Edge devices → fog node → MIS in the cloud via API. A diagram is mandatory.</li>
       <li><strong>Equipment list.</strong> A table with the columns: “Component&nbsp;/&nbsp;model”, “Purpose”, “Quantity”, “Approximate price, UAH”, “Shop link”, “Already available or to be purchased”. A total figure is required.</li>
-      <li><strong>Software.</strong> Languages, frameworks, data format, processing on the edge node, security and personal data protection.</li>
+      <li><strong>Software.</strong> Languages, frameworks, data format, processing on the fog node, security and personal data protection.</li>
+      <li><strong>Use of AI / LLMs.</strong> Propose what could be computed or automated with AI or language models — on the fog node itself, where computing power is scarce (signal quality assessment, rejecting artefacts, compressing or selecting data before transmission, a local model instead of a cloud one), and beyond it, over the data already collected (spotting deviations in trends, a short summary for the clinician, helping the health worker with data entry). This <strong>need not be the central idea of the project</strong>: a well-argued proposal is enough, and a working prototype counts in your favour.</li>
       <li><strong>Integration with the MIS API.</strong> Which data the team plans to send, and in what form.</li>
       <li><strong>Work plan.</strong> A week-by-week schedule up to the final, and how tasks are split within the team.</li>
       <li><strong>Risks and alternatives.</strong> What you will do if a component turns out to be unavailable.</li>
@@ -203,10 +231,11 @@
     </ol>
   </div>
 
-  <h3>Sample equipment table (item 5)</h3>
+  <h3>A worked example of the equipment list (item 5)</h3>
+  <p>Below is an example taken from a draft application by one of the prospective entrants. It shows the level of detail we expect: a specific model, a shop and a price, rather than “a pulse sensor”.</p>
   <div class="table-scroll">
     <table>
-      <caption>An example of how to lay out the equipment list, with a total.</caption>
+      <caption>An example equipment list with a total.</caption>
       <thead>
         <tr>
           <th scope="col">Component / model</th>
@@ -219,31 +248,72 @@
       </thead>
       <tbody>
         <tr>
-          <td>Raspberry Pi 4, 4 GB</td>
-          <td>Edge/fog node, delivery to the MIS</td>
+          <td>ESP32 38-pin DevKit (ESP32-WROOM-32)</td>
+          <td>Bluetooth LE, Wi-Fi, data transmission to the server</td>
           <td>1</td>
-          <td>—</td>
-          <td>—</td>
+          <td>300</td>
+          <td><a href="https://evse.com.ua/esp32-38pin-devkit-wi-fi-bluetooth-esp32-wroom-32-plata-razrabotchika/" rel="noopener nofollow">evse.com.ua</a></td>
           <td>to buy</td>
         </tr>
         <tr>
           <td>MAX30102</td>
-          <td>Pulse and SpO2</td>
-          <td>2</td>
-          <td>—</td>
-          <td>—</td>
-          <td>available</td>
+          <td>PPG signal acquisition, pulse rate and blood oxygen saturation (SpO2)</td>
+          <td>1</td>
+          <td>89</td>
+          <td><a href="https://arduino.ua/prod2036-datchik-pylsy-max30102-v2" rel="noopener nofollow">arduino.ua</a></td>
+          <td>to buy</td>
         </tr>
         <tr>
-          <td>…</td>
-          <td>…</td>
-          <td>…</td>
-          <td>…</td>
-          <td>…</td>
-          <td>…</td>
+          <td>3.5″ TFT display, 320×480 ILI9486 with touchscreen</td>
+          <td>Pairing-code entry and hub status display</td>
+          <td>1</td>
+          <td>691</td>
+          <td><a href="https://arduino.ua/prod2642-shild-tft-displeya-3-5-320h480-ili9486-s-tachskrinom-dlya-arduino" rel="noopener nofollow">arduino.ua</a></td>
+          <td>to buy</td>
+        </tr>
+        <tr>
+          <td>Beurer BM 57 (Bluetooth)</td>
+          <td>Blood pressure and pulse</td>
+          <td>1</td>
+          <td>2699</td>
+          <td><a href="https://electros.com.ua/8748" rel="noopener nofollow">electros.com.ua</a></td>
+          <td>to buy</td>
+        </tr>
+        <tr>
+          <td>Beurer FT 95 (Bluetooth)</td>
+          <td>Body temperature</td>
+          <td>1</td>
+          <td>1999</td>
+          <td><a href="https://apteka.rozetka.com.ua/ua/186783262/p186783262/" rel="noopener nofollow">apteka.rozetka.com.ua</a></td>
+          <td>to buy</td>
         </tr>
       </tbody>
+      <tfoot>
+        <tr>
+          <th scope="row" colspan="3">Total</th>
+          <td>5778</td>
+          <td colspan="2"></td>
+        </tr>
+      </tfoot>
     </table>
+  </div>
+
+  <div class="card">
+    <h3>The kit outline from the same example</h3>
+    <dl class="spec">
+      <dt>Hardware platform</dt>
+      <dd>Arduino Mega 2560 + ESP32 + MAX30102 + TFT display + ready-made BLE blood pressure monitor and BLE thermometer.</dd>
+      <dt>Primary measurements</dt>
+      <dd>Pulse, SpO2, systolic and diastolic blood pressure, body temperature.</dd>
+      <dt>Additional analytics</dt>
+      <dd>Mean arterial pressure (MAP) and pulse rate variability (PRV).</dd>
+      <dt>Research component</dt>
+      <dd>PPG recording, pulse-interval analysis, and assessment of signal quality using motion data.</dd>
+    </dl>
+  </div>
+
+  <div class="note">
+    <p>Treat this as <strong>an example, not a benchmark</strong>: the prices are those at the time the draft was written and will change, and the contents of a kit depend on the problem you set yourself. Note that in this example the Arduino Mega 2560 appears in the platform description but not in the table — in your own application, make sure the table covers every component you actually use.</p>
   </div>
 </section>
 
@@ -251,7 +321,14 @@
   <h2 id="equipment-h">Equipment and budget</h2>
   <p>The organisers purchase or fund components against approved applications; decisions are made by <strong>10 November 2026</strong> on the basis of the list given in the project proposal. The list must therefore be specific: model, quantity, price, shop link.</p>
   <p><strong>The budget per team is set by the jury</strong>, depending on how well the list is justified and how demanding the design is.</p>
-  <p>Preference goes to solutions built from affordable, widely available and <strong>repairable</strong> components: the kit has to stay serviceable in a community with no service centre nearby.</p>
+  <p>Preference goes to affordable components that are easy to obtain and to replace: the kit has to keep working in a community with no service centre nearby.</p>
+
+  <div class="note">
+    <h3>Who owns the equipment</h3>
+    <p>Components bought for the competition <strong>remain the property of the organisers</strong>. Teams have them on loan for the duration of the competition, and after the final the hardware returns to a <strong>shared pool</strong> used by entrants in subsequent competitions and student projects.</p>
+    <p>In other words, we are not handing kits out to teams — we are building up a stock of instruments at the department. Please treat the components with care: avoid irreversible modifications where a connector or a bracket would do, and keep the packaging and documentation.</p>
+    <p>What you produce — code, schematics and documentation — stays with the team; it is the hardware that goes back into the pool.</p>
+  </div>
 
   <div class="grid cols-2">
     <div class="card">
@@ -275,6 +352,29 @@
   <div class="note">
     <p>These are <strong>examples only</strong>, not a required list. If your design needs different sensors or a different platform, justify the choice in the proposal.</p>
   </div>
+
+  <h3>Level of components: bare sensors are not compulsory</h3>
+  <p>You do not have to build everything from low-level sensors. A ready-made device at a higher level — a blood pressure monitor, pulse oximeter, thermometer, scales, glucometer, portable ECG recorder — is perfectly acceptable and often the wiser choice: your time then goes into architecture and integration rather than into fighting the calibration of a raw signal.</p>
+  <p>There is one condition: <strong>there must be a way to get the data out</strong> of the device, without reverse engineering and without an agreement with the manufacturer.</p>
+  <div class="grid cols-2">
+    <div class="card">
+      <h3>What to look for</h3>
+      <ul>
+        <li>Standard Bluetooth LE profiles — see the <a href="https://www.bluetooth.com/specifications/specs/" rel="noopener">Bluetooth SIG specifications</a>: Blood Pressure, Pulse Oximeter, Health Thermometer, Weight Scale, Glucose. Any BLE library can read them.</li>
+        <li>An open serial or USB protocol with the frame format documented.</li>
+        <li>A documented manufacturer API or SDK that gives access to the raw measurements.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>What to avoid</h3>
+      <ul>
+        <li>Devices that hand their data only to the manufacturer's own app or cloud.</li>
+        <li>Devices with no technical documentation at all — they will consume the whole project.</li>
+        <li>Anything tied to a subscription or an account without which the device will not work.</li>
+      </ul>
+    </div>
+  </div>
+  <p>Finding the specific models is your part of the work: the market moves faster than we can update this page. In the application, state <strong>exactly how</strong> you will get the data out of each device (BLE profile, API, serial port) — this is one of the key points when we judge whether the plan is realistic.</p>
 </section>
 
 <section id="api" aria-labelledby="api-h">
@@ -286,12 +386,12 @@
     <ul>
       <li><strong>Protocol:</strong> a REST API exchanging JSON over HTTPS.</li>
       <li><strong>Authentication:</strong> a token issued to the team; keys must not be stored in plain text in firmware or source code.</li>
-      <li><strong>Direction:</strong> the edge/fog node sends measurements to the MIS, which links them to the patient record.</li>
+      <li><strong>Direction:</strong> the fog node sends measurements to the MIS, which links them to the patient record.</li>
     </ul>
   </div>
 
   <h3>Indicative shape of a single measurement</h3>
-  <p>The snippet below only illustrates what a measurement contains, so that teams can design their edge-node data format. Final field names, endpoints and authentication rules will come from the documentation.</p>
+  <p>The snippet below only illustrates what a measurement contains, so that teams can design their fog-node data format. Final field names, endpoints and authentication rules will come from the documentation.</p>
   <pre><code>{
   "patient_ref": "&lt;patient identifier in the MIS&gt;",
   "device": "&lt;device or sensor model&gt;",
@@ -330,6 +430,10 @@
     <div class="card">
       <h3>Usability for health workers</h3>
       <p>Whether a nurse or paramedic can operate the kit without an engineer at hand.</p>
+    </div>
+    <div class="card">
+      <h3>AI ideas</h3>
+      <p>What the team proposes to compute with AI or LLMs, particularly on a low-powered fog node. The idea counts; an implementation counts for more.</p>
     </div>
     <div class="card">
       <h3>Presentation</h3>
@@ -371,8 +475,12 @@
       <p>No. The organisers purchase or fund components against approved applications by 10 November 2026. If you already own some of the parts, mark them as available in the table.</p>
     </details>
     <details>
+      <summary>Does the team keep the equipment after the competition?</summary>
+      <p>No. Components bought for you belong to the organisers and return after the final to a shared equipment pool used by entrants in later competitions and student projects. The team has them on loan for the duration of the competition. Parts of your own that you listed as already available remain yours, of course.</p>
+    </details>
+    <details>
       <summary>Must we use ESP32, Raspberry Pi and the sensors listed?</summary>
-      <p>No — those are examples of typical components. You may use any available solution, including off-the-shelf Bluetooth consumer devices, as long as you justify the choice and show the kit can be reproduced.</p>
+      <p>No — those are examples of typical components. You may use any available solution, including ready-made devices at a higher level, provided the data can be read out of the device in an open or documented way, the choice is justified, and the kit can be reproduced.</p>
     </details>
     <details>
       <summary>Which language should the proposal be written in?</summary>

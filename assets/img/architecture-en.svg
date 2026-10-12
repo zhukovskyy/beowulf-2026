@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 300" width="880" height="300"
      role="img" aria-labelledby="archTitleEn archDescEn">
-  <title id="archTitleEn">Architecture of the telemedicine kit</title>
-  <desc id="archDescEn">Medical devices and sensors at the patient's side send data to an edge or fog node, which buffers, validates and pre-processes it. The node then posts measurements through a REST API to the medical information system, which a remote clinician can access.</desc>
+  <title id="archTitleEn">Kit architecture: edge to fog to cloud</title>
+  <desc id="archDescEn">The edge layer is the measuring devices themselves at the patient's side: sensors and ready-made instruments that take a reading and do the first processing. The fog layer is a node that brings several such devices together, validates and buffers the data and runs local analytics. The fog node then sends measurements as JSON over a REST API to the medical information system in the cloud, which a remote clinician can access.</desc>
   <style>
     .box { fill: #ffffff; stroke: #0b6271; stroke-width: 2; }
     .box-accent { fill: #e3f0f2; stroke: #0b6271; stroke-width: 2; }
@@ -32,31 +32,32 @@
   </g>
 
   <rect class="box" x="16" y="56" width="216" height="128" rx="12"/>
-  <text class="t h" x="36" y="88">Patient-side devices</text>
-  <text class="t s" x="36" y="112">Sensors: pulse, SpO2,</text>
-  <text class="t s" x="36" y="132">temperature, ECG, blood</text>
-  <text class="t s" x="36" y="152">pressure, weight, glucose</text>
-  <text class="t s" x="36" y="172">BLE · USB · UART</text>
+  <text class="t h" x="36" y="86">EDGE — devices</text>
+  <text class="t s" x="36" y="110">Sensors and ready-made</text>
+  <text class="t s" x="36" y="130">instruments: pulse, SpO2,</text>
+  <text class="t s" x="36" y="150">temperature, ECG, blood</text>
+  <text class="t s" x="36" y="170">pressure, weight, glucose</text>
 
   <rect class="box-accent" x="316" y="40" width="248" height="160" rx="12"/>
-  <text class="t h" x="336" y="72">Edge / fog node</text>
-  <text class="t s" x="336" y="96">Raspberry Pi or ESP32</text>
-  <text class="t s" x="336" y="116">next to the patient:</text>
-  <text class="t s" x="336" y="136">capture, validation, filtering,</text>
-  <text class="t s" x="336" y="156">store-and-forward buffer,</text>
-  <text class="t s" x="336" y="176">local encryption</text>
+  <text class="t h" x="336" y="70">FOG — collecting node</text>
+  <text class="t s" x="336" y="94">Raspberry Pi or mini-PC:</text>
+  <text class="t s" x="336" y="114">brings several devices</text>
+  <text class="t s" x="336" y="134">together, validation,</text>
+  <text class="t s" x="336" y="154">store-and-forward buffer,</text>
+  <text class="t s" x="336" y="174">encryption, local analytics / AI</text>
 
   <rect class="box" x="648" y="56" width="216" height="116" rx="12"/>
-  <text class="t h" x="668" y="88">MIS</text>
-  <text class="t s" x="668" y="112">Medical information</text>
-  <text class="t s" x="668" y="132">system: patient record,</text>
-  <text class="t s" x="668" y="152">measurement history</text>
+  <text class="t h" x="668" y="86">CLOUD — MIS</text>
+  <text class="t s" x="668" y="110">Medical information</text>
+  <text class="t s" x="668" y="130">system: patient record,</text>
+  <text class="t s" x="668" y="150">measurement history</text>
 
   <rect class="box" x="648" y="222" width="216" height="62" rx="12"/>
   <text class="t h" x="668" y="252">Remote clinician</text>
   <text class="t s" x="668" y="272">MIS web interface</text>
 
-  <text class="lbl" x="252" y="110">DATA</text>
+  <text class="lbl" x="245" y="104">BLE / USB</text>
+  <text class="lbl" x="258" y="142">UART</text>
   <text class="lbl" x="576" y="104">REST API</text>
   <text class="lbl" x="588" y="142">JSON</text>
 </svg>

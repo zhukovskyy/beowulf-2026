@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 300" width="880" height="300"
      role="img" aria-labelledby="archTitle archDesc">
-  <title id="archTitle">Архітектура телемедичного комплекту</title>
-  <desc id="archDesc">Медичні пристрої та датчики біля пацієнта передають дані на edge- або fog-вузол, де вони буферизуються, перевіряються й попередньо обробляються. Далі вузол надсилає вимірювання через REST API до медичної інформаційної системи, до якої лікар має доступ на відстані.</desc>
+  <title id="archTitle">Архітектура комплекту: edge → fog → хмара</title>
+  <desc id="archDesc">Edge-рівень — це самі вимірювальні пристрої біля пацієнта: датчики й готові прилади, які знімають показник і роблять первинну обробку. Fog-рівень — вузол, що об’єднує кілька таких пристроїв, перевіряє та буферизує дані, виконує локальну аналітику. Далі fog-вузол передає вимірювання через REST API у форматі JSON до медичної інформаційної системи в хмарі, до якої лікар має доступ на відстані.</desc>
   <style>
     .box { fill: #ffffff; stroke: #0b6271; stroke-width: 2; }
     .box-accent { fill: #e3f0f2; stroke: #0b6271; stroke-width: 2; }
@@ -32,31 +32,32 @@
   </g>
 
   <rect class="box" x="16" y="56" width="216" height="128" rx="12"/>
-  <text class="t h" x="36" y="88">Пристрої пацієнта</text>
-  <text class="t s" x="36" y="112">Датчики: пульс, SpO2,</text>
-  <text class="t s" x="36" y="132">температура, ЕКГ, тиск,</text>
-  <text class="t s" x="36" y="152">вага, глюкоза</text>
-  <text class="t s" x="36" y="172">BLE · USB · UART</text>
+  <text class="t h" x="36" y="86">EDGE — пристрої</text>
+  <text class="t s" x="36" y="110">Датчики й готові прилади</text>
+  <text class="t s" x="36" y="130">біля пацієнта: пульс, SpO2,</text>
+  <text class="t s" x="36" y="150">температура, ЕКГ, тиск,</text>
+  <text class="t s" x="36" y="170">вага, глюкоза</text>
 
   <rect class="box-accent" x="316" y="40" width="248" height="160" rx="12"/>
-  <text class="t h" x="336" y="72">Edge / fog-вузол</text>
-  <text class="t s" x="336" y="96">Raspberry Pi або ESP32</text>
-  <text class="t s" x="336" y="116">поруч із пацієнтом:</text>
-  <text class="t s" x="336" y="136">збір, валідація, фільтрація,</text>
-  <text class="t s" x="336" y="156">буфер при втраті зв&#8217;язку,</text>
-  <text class="t s" x="336" y="176">локальне шифрування</text>
+  <text class="t h" x="336" y="70">FOG — вузол-збирач</text>
+  <text class="t s" x="336" y="94">Raspberry Pi або міні-ПК:</text>
+  <text class="t s" x="336" y="114">об’єднує кілька пристроїв,</text>
+  <text class="t s" x="336" y="134">валідація, буфер при втраті</text>
+  <text class="t s" x="336" y="154">зв’язку, шифрування,</text>
+  <text class="t s" x="336" y="174">локальна аналітика / AI</text>
 
   <rect class="box" x="648" y="56" width="216" height="116" rx="12"/>
-  <text class="t h" x="668" y="88">МІС</text>
-  <text class="t s" x="668" y="112">Медична інформаційна</text>
-  <text class="t s" x="668" y="132">система: карта пацієнта,</text>
-  <text class="t s" x="668" y="152">історія вимірювань</text>
+  <text class="t h" x="668" y="86">CLOUD — МІС</text>
+  <text class="t s" x="668" y="110">Медична інформаційна</text>
+  <text class="t s" x="668" y="130">система: картка пацієнта,</text>
+  <text class="t s" x="668" y="150">історія вимірювань</text>
 
   <rect class="box" x="648" y="222" width="216" height="62" rx="12"/>
   <text class="t h" x="668" y="252">Лікар на відстані</text>
   <text class="t s" x="668" y="272">вебінтерфейс МІС</text>
 
-  <text class="lbl" x="254" y="110">ДАНІ</text>
+  <text class="lbl" x="245" y="104">BLE / USB</text>
+  <text class="lbl" x="258" y="142">UART</text>
   <text class="lbl" x="576" y="104">REST API</text>
   <text class="lbl" x="588" y="142">JSON</text>
 </svg>
