@@ -360,19 +360,6 @@ tfoot th, tfoot td {
   font-weight: 650;
 }
 
-dl.spec { margin: 0; display: grid; gap: .4rem 1.2rem; grid-template-columns: 1fr; }
-@media (min-width: 620px) {
-  dl.spec { grid-template-columns: max-content 1fr; }
-}
-dl.spec dt {
-  font-size: .8rem;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-  color: var(--muted);
-  padding-top: .2rem;
-}
-dl.spec dd { margin: 0; }
-
 /* ---------- Callouts ---------- */
 
 .note, .todo, .warning {
