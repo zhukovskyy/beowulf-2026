@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 300" width="880" height="300"
      role="img" aria-labelledby="archTitleEn archDescEn">
   <title id="archTitleEn">Kit architecture: edge to fog to cloud</title>
-  <desc id="archDescEn">The edge layer is the measuring devices themselves at the patient's side: sensors and ready-made instruments that take a reading and do the first processing. The fog layer is a node that brings several such devices together, validates and buffers the data and runs local analytics. The fog node then sends measurements as JSON over a REST API to the medical information system in the cloud, which a remote clinician can access.</desc>
+  <desc id="archDescEn">The edge layer is the measuring devices themselves at the patient's side: sensors and ready-made instruments that take a reading and do the first processing. The fog layer is a node that brings several such devices together, validates and buffers the data and runs local analytics; it can be a smartphone, a Raspberry Pi or a mini-PC. The fog node then sends measurements as JSON over a REST API to the medical information system in the cloud, which a remote clinician can access.</desc>
   <style>
     .box { fill: #ffffff; stroke: #0b6271; stroke-width: 2; }
     .box-accent { fill: #e3f0f2; stroke: #0b6271; stroke-width: 2; }
@@ -40,11 +40,11 @@
 
   <rect class="box-accent" x="316" y="40" width="248" height="160" rx="12"/>
   <text class="t h" x="336" y="70">FOG — collecting node</text>
-  <text class="t s" x="336" y="94">Raspberry Pi or mini-PC:</text>
-  <text class="t s" x="336" y="114">brings several devices</text>
-  <text class="t s" x="336" y="134">together, validation,</text>
+  <text class="t s" x="336" y="94">Smartphone, Raspberry Pi</text>
+  <text class="t s" x="336" y="114">or mini-PC. Brings several</text>
+  <text class="t s" x="336" y="134">devices together, validation,</text>
   <text class="t s" x="336" y="154">store-and-forward buffer,</text>
-  <text class="t s" x="336" y="174">encryption, local analytics / AI</text>
+  <text class="t s" x="336" y="174">encryption, analytics / AI</text>
 
   <rect class="box" x="648" y="56" width="216" height="116" rx="12"/>
   <text class="t h" x="668" y="86">CLOUD — MIS</text>

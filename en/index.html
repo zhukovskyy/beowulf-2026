@@ -104,7 +104,7 @@
   <p>The kit is built on an <strong>edge → fog → cloud</strong> architecture:</p>
   <ul>
     <li><strong>Edge</strong> — the measuring devices themselves: a sensor or a ready-made instrument that takes a reading at the patient's side and does the first processing of the signal.</li>
-    <li><strong>Fog</strong> — the node that receives and <strong>brings together the data from all those devices</strong>, validates it, keeps it when the link drops, and can compute things locally.</li>
+    <li><strong>Fog</strong> — the node that receives and <strong>brings together the data from all those devices</strong>, validates it, keeps it when the link drops, and can compute things locally. This can be a Raspberry Pi, a mini-PC or <strong>an ordinary smartphone running your app</strong>.</li>
     <li><strong>Cloud</strong> — the <strong>medical information system (MIS)</strong> developed in our earlier project; the fog node sends measurements there through an API.</li>
   </ul>
   <p>The goal is a solution for communities that are short of doctors: readings are taken on site by a nurse, a paramedic or the patient, and become available to a remote clinician immediately.</p>
@@ -112,7 +112,7 @@
   <figure class="diagram">
     <div class="diagram-scroll" tabindex="0" role="group" aria-label="Architecture diagram, scrolls horizontally">
       <img src="../assets/img/architecture-en.svg" width="880" height="300"
-           alt="Architecture diagram: the edge layer is sensors and ready-made instruments at the patient's side; they send data over BLE, USB or UART to a fog node (Raspberry Pi or mini-PC) that brings the devices together, validates and buffers measurements and runs local analytics; the node then posts the data as JSON through a REST API to the medical information system in the cloud, where a remote clinician reads it.">
+           alt="Architecture diagram: the edge layer is sensors and ready-made instruments at the patient's side; they send data over BLE, USB or UART to a fog node (a smartphone, Raspberry Pi or mini-PC) that brings the devices together, validates and buffers measurements and runs local analytics; the node then posts the data as JSON through a REST API to the medical information system in the cloud, where a remote clinician reads it.">
     </div>
     <figcaption>The data path: edge devices → fog node → MIS in the cloud via API → remote clinician.</figcaption>
   </figure>
@@ -161,6 +161,14 @@
 
 <section id="timeline" aria-labelledby="timeline-h">
   <h2 id="timeline-h">Timeline and deadlines</h2>
+  <p>The competition runs in two stages: selection, based on the application and a practical API task, then prototype development and the final.</p>
+
+  <div class="note">
+    <p><strong>The schedule is still being settled.</strong> The API sandbox is not ready as the competition opens, so the date of the practical task will be announced separately and the final has moved to February 2027. Watch this page for updates.</p>
+  </div>
+
+  <h3>Stage I — application and the API check</h3>
+  <p>The purpose of this stage is to select teams that have not only described an idea but have shown they can work with our API.</p>
   <ol class="timeline">
     <li>
       <span class="when">By 5 November 2026</span>
@@ -168,18 +176,32 @@
       <p class="meta">Form plus proposal in PDF.</p>
     </li>
     <li>
-      <span class="when">By 10 November 2026</span>
-      <p>Selected teams are announced; equipment is purchased and&nbsp;/&nbsp;or funded against the approved applications.</p>
+      <span class="when">Date to be announced</span>
+      <p>The practical API task: the organisers open the sandbox and the documentation, and the team shows it can send a measurement to the MIS.</p>
+      <p class="meta">The same task for every team. Access goes to everyone who has applied.</p>
+    </li>
+    <li>
+      <span class="when">At the end of Stage I</span>
+      <p>The teams going through to Stage II are announced.</p>
+      <p class="meta">We are not fixing the number in advance: it depends on the strength of the applications and on what funding allows.</p>
+    </li>
+  </ol>
+
+  <h3>Stage II — development and the final</h3>
+  <ol class="timeline">
+    <li>
+      <span class="when">Right after the Stage I results</span>
+      <p>Equipment is purchased and&nbsp;/&nbsp;or funded against the approved applications.</p>
       <p class="meta">What gets approved is the equipment list the team submitted in its proposal.</p>
     </li>
     <li>
-      <span class="when">November – December 2026</span>
+      <span class="when">Until February 2027</span>
       <p>Prototype development with mentor support.</p>
       <p class="meta">Regular sessions with mentors from the organisers and the partner.</p>
     </li>
     <li>
-      <span class="when">December 2026 – January 2027</span>
-      <p>The competition itself: hackathon and final demonstration in Rivne.</p>
+      <span class="when">February 2027</span>
+      <p>Hackathon and final demonstration in Rivne.</p>
       <p class="meta">The exact date will be announced later.</p>
     </li>
     <li>
@@ -191,15 +213,19 @@
 </section>
 
 <section id="submit" aria-labelledby="submit-h">
-  <h2 id="submit-h">What to submit</h2>
-  <div class="grid cols-2">
+  <h2 id="submit-h">What to submit for Stage I</h2>
+  <div class="grid cols-3">
     <div class="card">
       <h3>1. The completed application form</h3>
-      <p><a href="[посилання на Google Form]">Application form</a> — team contacts and basic details of the project.</p>
+      <p><a href="[посилання на Google Form]">Application form</a> — team contacts and basic details of the project. By 5 November 2026.</p>
     </div>
     <div class="card">
       <h3>2. A project proposal in PDF</h3>
-      <p>A single PDF following the structure below. Written in Ukrainian or English.</p>
+      <p>A single PDF following the structure below. Written in Ukrainian or English. By 5 November 2026.</p>
+    </div>
+    <div class="card">
+      <h3>3. The practical API task</h3>
+      <p>A small task in the MIS sandbox: send a measurement through the API. The date will be announced separately, once the sandbox is running.</p>
     </div>
   </div>
 
@@ -281,7 +307,7 @@
 
 <section id="equipment" aria-labelledby="equipment-h">
   <h2 id="equipment-h">Equipment and budget</h2>
-  <p>The organisers purchase or fund components against approved applications; decisions are made by <strong>10 November 2026</strong> on the basis of the list given in the project proposal. The list must therefore be specific: model, quantity, price, shop link.</p>
+  <p>The organisers purchase or fund components against approved applications; decisions are made once the Stage I results are announced, on the basis of the list given in the project proposal. The list must therefore be specific: model, quantity, price, shop link.</p>
   <p><strong>The budget per team is set by the jury</strong>, depending on how well the list is justified and how demanding the design is.</p>
   <p>Preference goes to affordable components that are easy to obtain and to replace: the kit has to keep working in a community with no service centre nearby.</p>
 
@@ -298,6 +324,7 @@
       <ul>
         <li>Microcontrollers: ESP32, Arduino</li>
         <li>Single-board computers: Raspberry Pi</li>
+        <li>A smartphone running your own app — a perfectly good fog node: BLE, a screen and power are already there; what remains is an app that collects data from the instruments and sends it to the server</li>
       </ul>
     </div>
     <div class="card">
@@ -313,6 +340,12 @@
 
   <div class="note">
     <p>These are <strong>examples only</strong>, not a required list. If your design needs different sensors or a different platform, justify the choice in the proposal.</p>
+  </div>
+
+  <div class="note">
+    <h3>Instruments with proven accuracy are preferred</h3>
+    <p>Where a reading will inform a clinical decision, we <strong>strongly prefer</strong> a ready-made medical device whose measurement accuracy has been verified: in the EU that means <strong>CE</strong> marking under the medical devices regulation, in Ukraine the <strong>national conformity mark</strong> under the Technical Regulation on Medical Devices. A certified blood pressure monitor, pulse oximeter or thermometer removes a whole class of metrology questions, and your effort goes into architecture and integration instead.</p>
+    <p>This is a recommendation, not a requirement: a design of your own built on sensors is also accepted. In that case, describe in the proposal how you will verify accuracy — comparison against a certified instrument, repeatability, the error margins you expect.</p>
   </div>
 
   <h3>Level of components: bare sensors are not compulsory</h3>
@@ -341,7 +374,7 @@
 
 <section id="api" aria-labelledby="api-h">
   <h2 id="api-h">The medical information system API</h2>
-  <p><strong>API documentation will be provided to the selected teams.</strong> Until then, the general integration model below is enough for planning.</p>
+  <p><strong>Documentation and sandbox access will be given to every team that applies</strong> — they are needed for the practical task in Stage I. The sandbox is still being prepared; as soon as it is running, the dates for the task will be announced here. For the application itself, the general integration model below is enough.</p>
 
   <div class="card">
     <h3>What is already known</h3>
@@ -434,7 +467,7 @@
     </details>
     <details>
       <summary>Do we have to buy the equipment ourselves?</summary>
-      <p>No. The organisers purchase or fund components against approved applications by 10 November 2026. If you already own some of the parts, mark them as available in the table.</p>
+      <p>No. The organisers purchase or fund components against approved applications, once the Stage I results are announced. If you already own some of the parts, mark them as available in the table.</p>
     </details>
     <details>
       <summary>Does the team keep the equipment after the competition?</summary>
@@ -450,7 +483,15 @@
     </details>
     <details>
       <summary>When do teams get access to the MIS API?</summary>
-      <p>Documentation and test credentials are given to the selected teams after 10 November 2026. At the application stage it is enough to describe which data you plan to send, and in what form.</p>
+      <p>Documentation and sandbox access go to every team that applies — they are needed for the practical task in Stage I. The sandbox is still being prepared, so the date will be announced separately. For the application itself it is enough to describe which data you plan to send, and in what form.</p>
+    </details>
+    <details>
+      <summary>How many teams will go through to Stage II?</summary>
+      <p>We are not fixing the number in advance. It depends on how many strong applications arrive and on what the equipment funding allows. There is no formal pass mark either: we look at the proposal together with the completed API task.</p>
+    </details>
+    <details>
+      <summary>Can we use a smartphone as the fog node?</summary>
+      <p>Yes. A phone running your app works perfectly well: it already has BLE, a screen, power and a network connection, so the app can collect data from the instruments and send it to our server. Justify the choice between a phone, a Raspberry Pi and a microcontroller in your proposal.</p>
     </details>
     <details>
       <summary>Can we continue a project we started earlier?</summary>
