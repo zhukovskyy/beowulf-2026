@@ -129,9 +129,31 @@ a:hover { color: var(--brand-hover); text-decoration-color: var(--accent); }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: .6rem 1.25rem;
   min-height: 46px;
+  padding-top: .55rem;
+  padding-bottom: .55rem;
   flex-wrap: wrap;
+}
+.bar-brand {
+  display: flex;
+  align-items: center;
+  gap: .7rem 1.25rem;
+  flex-wrap: wrap;
+}
+.bar-brand .brand-logo {
+  display: block;
+  width: 176px;
+  flex: 0 0 auto;
+}
+.bar-brand .brand-logo img { display: block; width: 100%; height: auto; }
+.bar-brand .tagline {
+  padding-left: 1.25rem;
+  border-left: 1px solid rgba(255, 255, 255, .25);
+}
+@media (max-width: 559px) {
+  .bar-brand .brand-logo { width: 150px; }
+  .bar-brand .tagline { display: none; }
 }
 .lang-bar .tagline {
   font-size: .8rem;
@@ -177,14 +199,6 @@ a:hover { color: var(--brand-hover); text-decoration-color: var(--accent); }
   border-bottom: 1px solid var(--line);
   padding: 1.75rem 0 2.25rem;
 }
-.brand-logo {
-  display: block;
-  width: 300px;
-  max-width: 72vw;
-  margin: 0 0 1.75rem;
-}
-.brand-logo img { display: block; width: 100%; height: auto; }
-
 .eyebrow {
   display: inline-block;
   font-size: .78rem;
@@ -260,18 +274,18 @@ a:hover { color: var(--brand-hover); text-decoration-color: var(--accent); }
 .toc {
   background: var(--surface);
   border-bottom: 1px solid var(--line);
-  position: sticky;
-  top: 0;
   z-index: 20;
+}
+@media (min-width: 760px) {
+  .toc { position: sticky; top: 0; }
 }
 .toc ol {
   list-style: none;
   margin: 0;
-  padding: .55rem 0;
+  padding: .5rem 0;
   display: flex;
-  gap: .25rem;
-  overflow-x: auto;
-  scrollbar-width: thin;
+  flex-wrap: wrap;
+  gap: .2rem .1rem;
 }
 .toc li { margin: 0; flex: 0 0 auto; }
 .toc a {
@@ -389,7 +403,7 @@ figcaption { font-size: .88rem; color: var(--muted); margin-top: .75rem; }
 .proposal > ol { margin: 0; padding-left: 1.4em; }
 .proposal > ol > li { margin-bottom: .75rem; }
 .proposal > ol > li:last-child { margin-bottom: 0; }
-.proposal > ol > li > strong { display: block; }
+.proposal > ol > li > strong:first-child { display: block; }
 .proposal > ol > li::marker { color: var(--brand); font-weight: 650; }
 
 /* ---------- Tables ---------- */
