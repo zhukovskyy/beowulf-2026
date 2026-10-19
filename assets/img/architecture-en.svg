@@ -3,20 +3,20 @@
   <title id="archTitleEn">Kit architecture: edge to fog to cloud</title>
   <desc id="archDescEn">The edge layer is the measuring devices themselves at the patient's side: sensors and ready-made instruments that take a reading and do the first processing. The fog layer is a node that brings several such devices together, validates and buffers the data and runs local analytics; it can be a smartphone, a Raspberry Pi or a mini-PC. The fog node then sends measurements as JSON over a REST API to the medical information system in the cloud, which a remote clinician can access.</desc>
   <style>
-    .box { fill: #ffffff; stroke: #0b6271; stroke-width: 2; }
-    .box-accent { fill: #e3f0f2; stroke: #0b6271; stroke-width: 2; }
-    .t { font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif; fill: #0f1f28; }
+    .box { fill: #ffffff; stroke: #003a5d; stroke-width: 2; }
+    .box-accent { fill: #e4edf3; stroke: #003a5d; stroke-width: 2; }
+    .t { font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif; fill: #10222e; }
     .h { font-size: 17px; font-weight: 650; }
-    .s { font-size: 13px; fill: #475a66; }
-    .lbl { font-size: 12px; fill: #0b6271; font-weight: 650; letter-spacing: .04em; }
-    .arrow { stroke: #0b6271; stroke-width: 2.5; fill: none; }
+    .s { font-size: 13px; fill: #636569; }
+    .lbl { font-size: 12px; fill: #003a5d; font-weight: 650; letter-spacing: .04em; }
+    .arrow { stroke: #003a5d; stroke-width: 2.5; fill: none; }
     @media (prefers-color-scheme: dark) {
-      .box { fill: #141f26; stroke: #5ecfc4; }
-      .box-accent { fill: #15292e; stroke: #5ecfc4; }
-      .t { fill: #e9f1f4; }
-      .s { fill: #a7bcc6; }
-      .lbl { fill: #8ae0d7; }
-      .arrow { stroke: #5ecfc4; }
+      .box { fill: #0c2e41; stroke: #7cc4e8; }
+      .box-accent { fill: #0f3a50; stroke: #7cc4e8; }
+      .t { fill: #e8f1f6; }
+      .s { fill: #9fb6c4; }
+      .lbl { fill: #a5d8f2; }
+      .arrow { stroke: #7cc4e8; }
     }
   </style>
   <defs>
@@ -25,7 +25,7 @@
     </marker>
   </defs>
 
-  <g class="arrow" color="#0b6271">
+  <g class="arrow" color="#003a5d">
     <line x1="232" y1="120" x2="316" y2="120" marker-end="url(#headEn)"/>
     <line x1="564" y1="120" x2="648" y2="120" marker-end="url(#headEn)"/>
     <line x1="760" y1="172" x2="760" y2="222" marker-end="url(#headEn)"/>
