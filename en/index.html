@@ -99,16 +99,6 @@
   <h2 id="about-h">About the competition</h2>
   <p>Teams are asked to build a telemedicine kit comparable in purpose to off-the-shelf systems such as IDIS2GO, but assembled from components available on the open market and from whatever is at hand. The point is not to clone an existing product — it is to find an engineering solution within a realistic budget.</p>
 
-  <div class="card">
-    <h3>Comparable systems for reference</h3>
-    <p>Look at what already exists before designing your own. These are reference points for purpose and range of measurements, not templates to copy: their price and their closed nature are precisely the problem we want to get around.</p>
-    <ul>
-      <li><a href="https://idis2go.net/" rel="noopener">IDIS2GO</a> (SK-Telemed, Austria) — a portable diagnostic station: ECG, blood pressure, SpO2, glucose, spirometry, temperature.</li>
-      <li><a href="https://www.tytocare.com/" rel="noopener">TytoCare</a> — a handheld device for remote examination: stethoscope, otoscope, camera, thermometer.</li>
-      <li><a href="https://medwand.com/" rel="noopener">MedWand</a> — a multi-sensor device the size of a computer mouse: temperature, SpO2, ECG, auscultation, camera.</li>
-      <li><a href="https://github.com/Protocentral/protocentral_healthypi_v4" rel="noopener">HealthyPi</a> (ProtoCentral) — a fully open-source vital signs monitor built on the Raspberry Pi and ESP32: ECG, respiration, PPG, SpO2, temperature. The closest example to our format, with open code and schematics.</li>
-    </ul>
-  </div>
   <p>The kit is built on an <strong>edge → fog → cloud</strong> architecture:</p>
   <ul>
     <li><strong>Edge</strong> — the measuring devices themselves: a sensor or a ready-made instrument that takes a reading at the patient's side and does the first processing of the signal.</li>
@@ -172,21 +162,26 @@
   <p>The competition runs in two stages: selection, based on the application and a practical API task, then prototype development and the final.</p>
 
   <div class="note">
-    <p><strong>The schedule is still being settled.</strong> The API sandbox is not ready as the competition opens, so the date of the practical task will be announced separately and the final has moved to February 2027. Watch this page for updates.</p>
+    <p><strong>The API sandbox opens shortly</strong> — roughly one to two weeks after the competition is announced. It comes with the task and a ready-made BRUNO&nbsp;/&nbsp;POSTMAN collection. You can write the proposal and choose components right now: that part does not depend on the API. The final is in February 2027.</p>
   </div>
 
-  <h3>Stage I — application and the API check</h3>
-  <p>The purpose of this stage is to select teams that have not only described an idea but have shown they can work with our API.</p>
+  <h3>Stage I — application and work with the API</h3>
+  <p>The stage has two strands running in parallel: the project proposal and hands-on work with our API. Stage II is for teams that both know what they are going to buy and can work with the API.</p>
   <ol class="timeline">
     <li>
-      <span class="when">By 1 December 2026</span>
-      <p>Submit the application form together with a project proposal.</p>
-      <p class="meta">Form plus proposal in PDF.</p>
+      <span class="when">Right now</span>
+      <p>Write the project proposal and choose your components.</p>
+      <p class="meta">This part does not depend on the API — there is no need to wait for the sandbox.</p>
     </li>
     <li>
-      <span class="when">Date to be announced</span>
-      <p>The practical API task: the organisers open the sandbox and the documentation, and the team shows it can send a measurement to the MIS.</p>
-      <p class="meta">The same task for every team. Access goes to everyone who has applied.</p>
+      <span class="when">Shortly</span>
+      <p>The API sandbox opens: documentation, a BRUNO&nbsp;/&nbsp;POSTMAN collection, and the task — send a measurement to the MIS.</p>
+      <p class="meta">The same task for every team. The links will appear in the “MIS API” section of this page.</p>
+    </li>
+    <li>
+      <span class="when">By 1 December 2026</span>
+      <p>Submit the form, the project proposal in PDF, and <strong>your sandbox identifier (token)</strong>.</p>
+      <p class="meta">We use that identifier to look at what your team actually sent through the API.</p>
     </li>
     <li>
       <span class="when">At the end of Stage I</span>
@@ -232,8 +227,8 @@
       <p>A single PDF following the structure below. Written in Ukrainian or English. By 1 December 2026.</p>
     </div>
     <div class="card">
-      <h3>3. The practical API task</h3>
-      <p>A small task in the MIS sandbox: send a measurement through the API. The date will be announced separately, once the sandbox is running.</p>
+      <h3>3. Work with the API sandbox</h3>
+      <p>The completed sandbox task, plus <strong>your identifier (token)</strong> in the application form — we use it to check the data you sent.</p>
     </div>
   </div>
 
@@ -382,7 +377,8 @@
 
 <section id="api" aria-labelledby="api-h">
   <h2 id="api-h">The medical information system API</h2>
-  <p><strong>Documentation and sandbox access will be given to every team that applies</strong> — they are needed for the practical task in Stage I. The sandbox is still being prepared; as soon as it is running, the dates for the task will be announced here. For the application itself, the general integration model below is enough.</p>
+  <p><strong>The API sandbox is open to every team</strong> — access is not something you have to earn, you need it during Stage I. With it you get the documentation, a ready-made request collection for <strong>BRUNO</strong> or <strong>POSTMAN</strong>, and the task: send a measurement to the MIS. Put your sandbox identifier (token) in the application and we will look at what you sent.</p>
+  <p>The sandbox opens shortly and the links will appear in this section. You can design your architecture right now, from the general integration model below.</p>
 
   <div class="card">
     <h3>What is already known</h3>
@@ -491,7 +487,7 @@
     </details>
     <details>
       <summary>When do teams get access to the MIS API?</summary>
-      <p>Documentation and sandbox access go to every team that applies — they are needed for the practical task in Stage I. The sandbox is still being prepared, so the date will be announced separately. For the application itself it is enough to describe which data you plan to send, and in what form.</p>
+      <p>The sandbox is open to every team and goes live shortly — roughly one to two weeks after the competition is announced. You get the documentation, a BRUNO or POSTMAN request collection, and the task. Your sandbox identifier (token) must be included in the application by 1 December 2026: we use it to confirm that your team really did work with the API.</p>
     </details>
     <details>
       <summary>How many teams will go through to Stage II?</summary>
