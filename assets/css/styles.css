@@ -347,6 +347,49 @@ figure.diagram svg {
 }
 figcaption { font-size: .88rem; color: var(--muted); margin-top: .75rem; }
 
+/* ---------- Opening scene and key facts ---------- */
+.scene {
+  font-family: var(--display);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  border-left: 3px solid var(--accent);
+  padding-left: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+.stats {
+  list-style: none;
+  margin: 1.5rem 0;
+  padding: 0;
+  display: grid;
+  gap: .75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (min-width: 760px) {
+  .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+.stats li {
+  margin: 0;
+  padding: .8rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.stats .label {
+  display: block;
+  font-size: .76rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: .15rem;
+}
+.stats .value {
+  display: block;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
 /* ---------- Timeline ---------- */
 
 .timeline {

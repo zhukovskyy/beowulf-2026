@@ -79,13 +79,16 @@
   <div class="wrap">
     <ol>
       <li><a href="#about">About</a></li>
+      <li><a href="#how">How it works</a></li>
       <li><a href="#eligibility">Who can enter</a></li>
       <li><a href="#timeline">Timeline</a></li>
       <li><a href="#submit">What to submit</a></li>
       <li><a href="#proposal">Proposal</a></li>
+      <li><a href="#components">Components</a></li>
       <li><a href="#equipment">Equipment</a></li>
       <li><a href="#api">MIS API</a></li>
       <li><a href="#criteria">Criteria</a></li>
+      <li><a href="#license">Licensing</a></li>
       <li><a href="#contacts">Contacts</a></li>
     </ol>
   </div>
@@ -96,15 +99,31 @@
 
 <section id="about" aria-labelledby="about-h">
   <h2 id="about-h">About the competition</h2>
-  <p>Teams are asked to build a telemedicine kit comparable in purpose to off-the-shelf systems such as IDIS2GO, but assembled from components available on the open market and from whatever is at hand. The point is not to clone an existing product — it is to find an engineering solution within a realistic budget.</p>
 
-  <p>The kit is built on an <strong>edge → fog → cloud</strong> architecture:</p>
+  <p class="scene">A village forty kilometres from the district hospital. A woman needs her blood pressure taken, an ECG recorded, and the result shown to a cardiologist. The village has a paramedic station. What it does not have is instruments that can send the data to a clinician by themselves — so the trip to the district town costs half a day, and often simply does not happen.</p>
+
+  <p>Your task is to close that gap with engineering: to design and build a <strong>telemedicine kit</strong>. A set of instruments that measure health indicators on site, in the community, and send them of their own accord to a medical information system where a remote clinician can read them.</p>
+
+  <p>Systems of this kind already exist on the market. They cost as much as a car and work only with the manufacturer's own cloud. We want the same result from components you can actually buy in Ukraine, with an open path for the data — so that the kit can be built again, for the next community.</p>
+
+  <ul class="stats">
+    <li><span class="label">Applications by</span><span class="value">1 December 2026</span></li>
+    <li><span class="label">Final</span><span class="value">February 2027, Rivne</span></li>
+    <li><span class="label">Team</span><span class="value">2–5 students</span></li>
+    <li><span class="label">Equipment</span><span class="value">bought by the organisers</span></li>
+  </ul>
+
+  <p>The competition runs in two stages: first the application and a practical task on our API, then prototype development and the final in Rivne. We plan to present the best solutions in Oxford. The equipment bought for the teams stays with the department and goes on working in later projects.</p>
+</section>
+
+<section id="how" aria-labelledby="how-h">
+  <h2 id="how-h">How it works</h2>
+  <p>The kit has three layers — <strong>edge → fog → cloud</strong>. The instruments measure, a separate node brings everything together, the MIS stores it:</p>
   <ul>
     <li><strong>Edge</strong> — the measuring devices themselves: a sensor or a ready-made instrument that takes a reading at the patient's side and does the first processing of the signal.</li>
     <li><strong>Fog</strong> — the node that receives and <strong>brings together the data from all those devices</strong>, validates it, keeps it when the link drops, and can compute things locally. This can be a Raspberry Pi, a mini-PC or <strong>an ordinary smartphone running your app</strong>.</li>
     <li><strong>Cloud</strong> — the <strong>medical information system (MIS)</strong> developed in our earlier project; the fog node sends measurements there through an API.</li>
   </ul>
-  <p>The goal is a solution for communities that are short of doctors: readings are taken on site by a nurse, a paramedic or the patient, and become available to a remote clinician immediately.</p>
 
   <figure class="diagram">
     <div class="diagram-scroll" tabindex="0" role="group" aria-label="Architecture diagram, scrolls horizontally">
@@ -300,7 +319,7 @@
       <li><strong>Architecture.</strong> Edge devices → fog node → MIS in the cloud via API. A diagram is mandatory.</li>
       <li><strong>Equipment list.</strong> A table with the columns: “Component&nbsp;/&nbsp;model”, “Purpose”, “Quantity”, “Approximate price, UAH”, “Shop link”, “Already available or to be purchased”. A total figure is required.</li>
       <li><strong>Software.</strong> Languages, frameworks, data format, processing on the fog node, security and personal data protection.</li>
-      <li><strong>Use of AI / LLMs.</strong> Propose what could be computed or automated with AI or language models — on the fog node itself, where computing power is scarce (signal quality assessment, rejecting artefacts, compressing or selecting data before transmission, a local model instead of a cloud one), and beyond it, over the data already collected (spotting deviations in trends, a short summary for the clinician, helping the health worker with data entry). This need not be the central idea of the project: a well-argued proposal is enough, and a working prototype counts in your favour.</li>
+      <li><strong>Use of AI / LLMs.</strong> Propose what is worth computing with AI or language models. On the fog node itself, where computing power is scarce: signal quality assessment, rejecting artefacts, selecting or compressing data before transmission, a local model instead of a cloud one. Beyond it, over the data already collected: spotting deviations in trends, a short summary for the clinician, helping the health worker with data entry. This need not be the central idea of the project: a well-argued proposal is enough, and a working prototype counts in your favour.</li>
       <li><strong>Integration with the MIS API.</strong> Which data the team plans to send, and in what form.</li>
       <li><strong>Work plan.</strong> A week-by-week schedule up to the final, and how tasks are split within the team.</li>
       <li><strong>Risks and alternatives.</strong> What you will do if a component turns out to be unavailable.</li>
@@ -356,19 +375,36 @@
   </div>
 </section>
 
-<section id="equipment" aria-labelledby="equipment-h">
-  <h2 id="equipment-h">Equipment and budget</h2>
-  <p>The organisers purchase or fund components against approved applications; decisions are made once the Stage I results are announced, on the basis of the list given in the project proposal. The list must therefore be specific: model, quantity, price, shop link.</p>
-  <p><strong>The budget per team is set by the jury</strong>, depending on how well the list is justified and how demanding the design is.</p>
-  <p>Preference goes to affordable components that are easy to obtain and to replace: the kit has to keep working in a community with no service centre nearby.</p>
-
-  <div class="note">
-    <h3>Who owns the equipment</h3>
-    <p>Components bought for the competition <strong>remain the property of the organisers</strong>. Teams have them on loan for the duration of the competition, and after the final the hardware returns to a <strong>shared pool</strong> used by entrants in subsequent competitions and student projects.</p>
-    <p>In other words, we are not handing kits out to teams — we are building up a stock of instruments at the department. Please treat the components with care: avoid irreversible modifications where a connector or a bracket would do, and keep the packaging and documentation.</p>
-    <p>What you produce — code, schematics and documentation — stays with the team; it is the hardware that goes back into the pool.</p>
+<section id="components" aria-labelledby="components-h">
+  <h2 id="components-h">Choosing components</h2>
+  <p>You do not have to build everything from low-level sensors. A ready-made device at a higher level — a blood pressure monitor, pulse oximeter, thermometer, scales, glucometer, portable ECG recorder — is perfectly acceptable and often the wiser choice: your time then goes into architecture and integration rather than into fighting the calibration of a raw signal.</p>
+  <p>There is one condition: <strong>there must be a way to get the data out</strong> of the device, without reverse engineering and without an agreement with the manufacturer.</p>
+  <div class="grid cols-2">
+    <div class="card">
+      <h3>What to look for</h3>
+      <ul>
+        <li>Standard Bluetooth LE profiles — see the <a href="https://www.bluetooth.com/specifications/specs/" rel="noopener">Bluetooth SIG specifications</a>: Blood Pressure, Pulse Oximeter, Health Thermometer, Weight Scale, Glucose. Any BLE library can read them.</li>
+        <li>An open serial or USB protocol with the frame format documented.</li>
+        <li>A documented manufacturer API or SDK that gives access to the raw measurements.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>What to avoid</h3>
+      <ul>
+        <li>Devices that hand their data only to the manufacturer's own app or cloud.</li>
+        <li>Devices with no technical documentation at all — they will consume the whole project.</li>
+        <li>Anything tied to a subscription or an account without which the device will not work.</li>
+      </ul>
+    </div>
   </div>
 
+  <div class="note">
+    <h3>Instruments with proven accuracy are preferred</h3>
+    <p>Where a reading will inform a clinical decision, we <strong>strongly prefer</strong> a ready-made medical device whose measurement accuracy has been verified: in the EU that means <strong>CE</strong> marking under the medical devices regulation, in Ukraine the <strong>national conformity mark</strong> under the Technical Regulation on Medical Devices. A certified blood pressure monitor, pulse oximeter or thermometer removes a whole class of metrology questions, and your effort goes into architecture and integration instead.</p>
+    <p>This is a recommendation, not a requirement: a design of your own built on sensors is also accepted. In that case, describe in the proposal how you will verify accuracy — comparison against a certified instrument, repeatability, the error margins you expect.</p>
+  </div>
+
+  <h3>Example components</h3>
   <div class="grid cols-2">
     <div class="card">
       <h3>Computing</h3>
@@ -393,34 +429,21 @@
     <p>These are <strong>examples only</strong>, not a required list. If your design needs different sensors or a different platform, justify the choice in the proposal.</p>
   </div>
 
-  <div class="note">
-    <h3>Instruments with proven accuracy are preferred</h3>
-    <p>Where a reading will inform a clinical decision, we <strong>strongly prefer</strong> a ready-made medical device whose measurement accuracy has been verified: in the EU that means <strong>CE</strong> marking under the medical devices regulation, in Ukraine the <strong>national conformity mark</strong> under the Technical Regulation on Medical Devices. A certified blood pressure monitor, pulse oximeter or thermometer removes a whole class of metrology questions, and your effort goes into architecture and integration instead.</p>
-    <p>This is a recommendation, not a requirement: a design of your own built on sensors is also accepted. In that case, describe in the proposal how you will verify accuracy — comparison against a certified instrument, repeatability, the error margins you expect.</p>
-  </div>
-
-  <h3>Level of components: bare sensors are not compulsory</h3>
-  <p>You do not have to build everything from low-level sensors. A ready-made device at a higher level — a blood pressure monitor, pulse oximeter, thermometer, scales, glucometer, portable ECG recorder — is perfectly acceptable and often the wiser choice: your time then goes into architecture and integration rather than into fighting the calibration of a raw signal.</p>
-  <p>There is one condition: <strong>there must be a way to get the data out</strong> of the device, without reverse engineering and without an agreement with the manufacturer.</p>
-  <div class="grid cols-2">
-    <div class="card">
-      <h3>What to look for</h3>
-      <ul>
-        <li>Standard Bluetooth LE profiles — see the <a href="https://www.bluetooth.com/specifications/specs/" rel="noopener">Bluetooth SIG specifications</a>: Blood Pressure, Pulse Oximeter, Health Thermometer, Weight Scale, Glucose. Any BLE library can read them.</li>
-        <li>An open serial or USB protocol with the frame format documented.</li>
-        <li>A documented manufacturer API or SDK that gives access to the raw measurements.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>What to avoid</h3>
-      <ul>
-        <li>Devices that hand their data only to the manufacturer's own app or cloud.</li>
-        <li>Devices with no technical documentation at all — they will consume the whole project.</li>
-        <li>Anything tied to a subscription or an account without which the device will not work.</li>
-      </ul>
-    </div>
-  </div>
   <p>Finding the specific models is your part of the work: the market moves faster than we can update this page. In the application, state <strong>exactly how</strong> you will get the data out of each device (BLE profile, API, serial port) — this is one of the key points when we judge whether the plan is realistic.</p>
+</section>
+
+<section id="equipment" aria-labelledby="equipment-h">
+  <h2 id="equipment-h">Equipment and budget</h2>
+  <p>The organisers purchase or fund components against approved applications; decisions are made once the Stage I results are announced, on the basis of the list given in the project proposal. The list must therefore be specific: model, quantity, price, shop link.</p>
+  <p><strong>The budget per team is set by the jury</strong>, depending on how well the list is justified and how demanding the design is.</p>
+  <p>Preference goes to affordable components that are easy to obtain and to replace: the kit has to keep working in a community with no service centre nearby.</p>
+
+  <div class="note">
+    <h3>Who owns the equipment</h3>
+    <p>Components bought for the competition <strong>remain the property of the organisers</strong>. Teams have them on loan for the duration of the competition, and after the final the hardware returns to a <strong>shared pool</strong> used by entrants in subsequent competitions and student projects.</p>
+    <p>In other words, we are not handing kits out to teams — we are building up a stock of instruments at the department. Please treat the components with care: avoid irreversible modifications where a connector or a bracket would do, and keep the packaging and documentation.</p>
+    <p>What you produce — code, schematics and documentation — stays with the team; it is the hardware that goes back into the pool.</p>
+  </div>
 </section>
 
 <section id="api" aria-labelledby="api-h">
@@ -490,6 +513,58 @@
   </div>
 </section>
 
+<section id="license" aria-labelledby="license-h">
+  <h2 id="license-h">Licensing and rights in the results</h2>
+  <p>Everything a team produces within the competition is published under open licences. The reason is simple: the next team should start from something that already works rather than from nothing, and the department should be free to carry these results forward, in teaching and in later competitions.</p>
+  <p><strong>Authorship stays with you.</strong> An open licence does not transfer your rights to us: you remain the authors, your names stay in the repository, and you may use your own work however you wish, including commercially.</p>
+
+  <div class="table-scroll">
+    <table>
+      <caption>Which licence applies to which part of the work.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Part of the work</th>
+          <th scope="col">Licence</th>
+          <th scope="col">Why this one</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Code: firmware, app, server side, scripts</td>
+          <td><a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">Apache License 2.0</a></td>
+          <td>Permits both free and commercial use, addresses patent rights explicitly, and requires attribution to be kept.</td>
+        </tr>
+        <tr>
+          <td>Hardware: schematics, boards, 3D models, enclosures, drawings</td>
+          <td><a href="https://cern-ohl.web.cern.ch/" rel="noopener">CERN-OHL-P v2</a></td>
+          <td>A licence written specifically for open hardware — the permissive variant. Copyright in schematics works differently from copyright in code.</td>
+        </tr>
+        <tr>
+          <td>Documentation, instructions, photographs, diagrams, slides</td>
+          <td><a href="https://creativecommons.org/licenses/by/4.0/deed.en" rel="noopener">CC BY 4.0</a></td>
+          <td>Text and images can be carried into teaching materials with a credit to the authors.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>What this means in practice</h3>
+  <ol>
+    <li>Open a public repository (GitHub or GitLab) — no later than the final.</li>
+    <li>Put in its root the files <code>LICENSE</code> (Apache-2.0), <code>LICENSE-hardware</code> (CERN-OHL-P v2), <code>LICENSE-docs</code> (CC BY 4.0) and <code>NOTICE</code> with the project name, the year and the team members.</li>
+    <li>Add a “Licences” paragraph to the <code>README</code>: what is covered by which licence.</li>
+  </ol>
+  <p>Ready-made template files are <a href="https://github.com/zhukovskyy/beowulf-2026" rel="noopener">in this site's repository</a> — copy them and fill in your own details.</p>
+
+  <div class="note">
+    <h3>Other people's code and other people's data</h3>
+    <p>Third-party libraries, SDKs and manufacturer examples stay under their own licences — check that they are compatible with those above, and do not add code to the repository that you have no right to license. If something cannot be opened (a device SDK under NDA, say), write that in the proposal and we will find a way round it.</p>
+    <p><strong>Do not put real patient measurements</strong> in a public repository: test data only, simulator signals, or the team members' own readings with their consent.</p>
+  </div>
+
+  <p>No separate section in the project proposal is needed for this — confirming in the application form that the team accepts these terms is enough.</p>
+</section>
+
 <section id="safety" aria-labelledby="safety-h">
   <h2 id="safety-h">Important</h2>
   <div class="warning">
@@ -529,6 +604,14 @@
     <details>
       <summary>Must we use ESP32, Raspberry Pi and the sensors listed?</summary>
       <p>No — those are examples of typical components. You may use any available solution, including ready-made devices at a higher level, provided the data can be read out of the device in an open or documented way, the choice is justified, and the kit can be reproduced.</p>
+    </details>
+    <details>
+      <summary>Can we use our project after the competition — in a startup, for instance?</summary>
+      <p>Yes. Copyright stays with the team, and neither Apache-2.0 nor CERN-OHL-P forbids commercial use. Note the other side of an open licence: someone else may take your work too, keeping the credit to you.</p>
+    </details>
+    <details>
+      <summary>What if we would rather not open our code and schematics?</summary>
+      <p>Then this competition is not for you: publishing the results under open licences is one of the conditions of entry. If one specific part cannot be opened because of someone else's rights (a device SDK under NDA, say), write that in the proposal and we will consider it separately.</p>
     </details>
     <details>
       <summary>Which language should the proposal be written in?</summary>

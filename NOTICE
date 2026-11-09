@@ -1,0 +1,60 @@
+Beowulf: відкритий телемедичний комплект / Beowulf: Open Telemedicine Kit
+Сайт студентського конкурсу / Student competition website
+
+Copyright 2026 Національний університет водного господарства та
+природокористування (НУВГП) та OHIN — Open Health Informatics Networks.
+
+Copyright 2026 National University of Water and Environmental Engineering
+(NUWEE) and OHIN — Open Health Informatics Networks.
+
+
+ЛІЦЕНЗІЇ / LICENCES
+
+  Код (HTML, CSS, скрипти)         Apache License 2.0   ->  LICENSE
+  Code (HTML, CSS, scripts)
+
+  Апаратні матеріали               CERN-OHL-P v2        ->  LICENSE-hardware
+  Hardware material
+  (схеми, плати, корпуси, 3D-моделі / schematics, boards, enclosures, 3D models)
+
+  Текст, зображення, документація   CC BY 4.0            ->  LICENSE-docs
+  Text, images, documentation
+
+
+ДЛЯ КОМАНД-УЧАСНИЦЬ / FOR COMPETING TEAMS
+
+Скопіюйте ці чотири файли (LICENSE, LICENSE-hardware, LICENSE-docs, NOTICE)
+до кореня власного репозиторію й замініть у NOTICE назву проєкту, рік і
+правовласників на свої — назву вашого проєкту та склад команди. Тексти
+ліцензій не змінюйте: вони мають залишатися дослівними.
+
+Copy these four files (LICENSE, LICENSE-hardware, LICENSE-docs, NOTICE) into
+the root of your own repository and replace the project name, the year and
+the copyright holders in NOTICE with your own — your project name and your
+team members. Do not edit the licence texts themselves: they must stay
+verbatim.
+
+Зразок рядка для команди / Sample line for a team:
+
+  Copyright 2027 <Прізвище Ім'я>, <Прізвище Ім'я>, <Прізвище Ім'я>
+  Розроблено в межах конкурсу «Beowulf: відкритий телемедичний комплект»
+  (OHIN та НУВГП, 2026–2027).
+  Developed for the "Beowulf: Open Telemedicine Kit" competition
+  (OHIN and NUWEE, 2026-2027).
+
+
+СТОРОННІ МАТЕРІАЛИ / THIRD-PARTY MATERIAL
+
+  Inter (assets/fonts/inter-*.woff2)
+    SIL Open Font License 1.1 — https://github.com/rsms/inter
+
+  Literata (assets/fonts/literata-*.woff2)
+    SIL Open Font License 1.1 — https://github.com/googlefonts/literata
+
+  Логотипи НУВГП (assets/img/logo-nuwee-*.png) — власність НУВГП,
+  використання за брендбуком університету 2025 року. Під ліцензії,
+  перелічені вище, не підпадають.
+
+  NUWEE logos (assets/img/logo-nuwee-*.png) — property of NUWEE, used in
+  accordance with the university's 2025 brandbook. Not covered by the
+  licences listed above.
