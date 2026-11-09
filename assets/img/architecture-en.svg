@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 300" width="880" height="300"
      role="img" aria-labelledby="archTitleEn archDescEn">
   <title id="archTitleEn">Kit architecture: edge to fog to cloud</title>
-  <desc id="archDescEn">The edge layer is the measuring devices themselves at the patient's side: sensors and ready-made instruments that take a reading and do the first processing. The fog layer is a node that brings several such devices together, validates and buffers the data and runs local analytics; it can be a smartphone, a Raspberry Pi or a mini-PC. The fog node then sends measurements as JSON over a REST API to the medical information system in the cloud, which a remote clinician can access.</desc>
+  <desc id="archDescEn">The edge layer is the measuring devices themselves at the patient's side: sensors and ready-made instruments that take a reading and do the first processing (blood pressure, heart rate, SpO2, temperature, respiratory rate, ECG). The fog layer is a node that brings several such devices together, validates and buffers the data and runs local analytics; it can be a smartphone, a Raspberry Pi or a mini-PC. The fog node then sends measurements as JSON over a REST API to the medical information system in the cloud, which a remote clinician can access.</desc>
   <style>
     .box { fill: #ffffff; stroke: #003a5d; stroke-width: 2; }
     .box-accent { fill: #e4edf3; stroke: #003a5d; stroke-width: 2; }
@@ -34,9 +34,9 @@
   <rect class="box" x="16" y="56" width="216" height="128" rx="12"/>
   <text class="t h" x="36" y="86">EDGE — devices</text>
   <text class="t s" x="36" y="110">Sensors and ready-made</text>
-  <text class="t s" x="36" y="130">instruments: pulse, SpO2,</text>
-  <text class="t s" x="36" y="150">temperature, ECG, blood</text>
-  <text class="t s" x="36" y="170">pressure, weight, glucose</text>
+  <text class="t s" x="36" y="130">instruments: blood pressure,</text>
+  <text class="t s" x="36" y="150">heart rate, SpO2, temperature,</text>
+  <text class="t s" x="36" y="170">respiratory rate, ECG</text>
 
   <rect class="box-accent" x="316" y="40" width="248" height="160" rx="12"/>
   <text class="t h" x="336" y="70">FOG — collecting node</text>
