@@ -104,12 +104,10 @@
 
   <p>Your task is to close that gap with engineering: to design and build a <strong>telemedicine kit</strong>. A set of instruments that measure health indicators on site, in the community, and send them of their own accord to a medical information system where a remote clinician can read them.</p>
 
-  <p>Systems of this kind already exist on the market. They cost as much as a car and work only with the manufacturer's own cloud. We want the same result from components you can actually buy in Ukraine, with an open path for the data — so that the kit can be built again, for the next community.</p>
-
   <ul class="stats">
     <li><span class="label">Applications by</span><span class="value">1 December 2026</span></li>
     <li><span class="label">Final</span><span class="value">February 2027, Rivne</span></li>
-    <li><span class="label">Team</span><span class="value">2–5 students</span></li>
+    <li><span class="label">Team</span><span class="value">2–4 students</span></li>
     <li><span class="label">Equipment</span><span class="value">bought by the organisers</span></li>
   </ul>
 
@@ -148,54 +146,47 @@
     </div>
   </div>
 
-  <h3>Mandatory measurements</h3>
-  <p>The list has been agreed with the clinical side of the project. Every kit must measure at least these six; anything beyond them is your choice.</p>
+  <h3>The measurement set we want</h3>
+  <p>The list has been agreed with the clinical side of the project: this is what we want to see in a kit. Use it as your reference when choosing instruments.</p>
   <div class="table-scroll">
     <table>
-      <caption>The minimum set of measurements a kit sends to the MIS.</caption>
+      <caption>The measurements a kit sends to the MIS.</caption>
       <thead>
         <tr>
           <th scope="col">Measurement</th>
           <th scope="col">What is sent</th>
-          <th scope="col">Where it can come from</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>Blood pressure</td>
           <td>Systolic and diastolic, mmHg</td>
-          <td>Automatic upper-arm blood pressure monitor</td>
         </tr>
         <tr>
           <td>Heart rate</td>
           <td>Beats per minute</td>
-          <td>Blood pressure monitor, pulse oximeter or ECG</td>
         </tr>
         <tr>
           <td>SpO2 (oxygen saturation)</td>
           <td>Percentage; the raw PPG waveform too, if the device exposes it</td>
-          <td>Fingertip pulse oximeter</td>
         </tr>
         <tr>
           <td>Body temperature</td>
           <td>°C, stating the method (contact or infrared)</td>
-          <td>Digital or infrared thermometer</td>
         </tr>
         <tr>
           <td>Respiratory rate</td>
-          <td>Breaths per minute</td>
-          <td>Derived from ECG or PPG, or measured separately</td>
+          <td>Breaths per minute; may be computed from ECG or PPG</td>
         </tr>
         <tr>
           <td>ECG</td>
           <td>At least one lead: the raw trace and heart rate</td>
-          <td>Portable recorder, or an AD8232 module</td>
         </tr>
       </tbody>
     </table>
   </div>
-  <p>ECG is the most expensive of the mandatory items — budget for it from the start. Respiratory rate need not have a device of its own if you compute it from a signal you already capture, but say in the proposal how you do it.</p>
-  <p>Anything beyond this minimum — glucose, spirometry, weight, auscultation, photographs of skin or ear — is welcome, provided you justify the choice and can handle the integration.</p>
+  <p>The full set counts in your favour, but an incomplete one does not disqualify you. If a measurement is out of reach — most often ECG, which is also the most expensive — say in the proposal why, and what you propose instead.</p>
+  <p>Further measurements — glucose, spirometry, weight, auscultation — are welcome if you justify the choice.</p>
 
   <div class="card">
     <h3>Comparable systems for reference</h3>
@@ -218,7 +209,7 @@
     </div>
     <div class="card">
       <h3>Team size</h3>
-      <p>Two to five people. A faculty mentor may advise the team; the mentor does not count towards the limit and does not do the students' work.</p>
+      <p>Two to four people. A faculty mentor may advise the team; the mentor does not count towards the limit and does not do the students' work.</p>
     </div>
   </div>
   <p>Interdisciplinary teams and teams drawn from several universities are welcome: the kit calls for circuit design, software engineering and an understanding of the clinical workflow alike.</p>
@@ -315,7 +306,7 @@
     <ol>
       <li><strong>Project title and team.</strong> Members, roles, contacts, mentor.</li>
       <li><strong>Problem and target user.</strong> Who the kit is for and the conditions it will work in.</li>
-      <li><strong>Measurements.</strong> How you capture the six mandatory measurements (blood pressure, heart rate, SpO2, temperature, respiratory rate, ECG) and which additional ones you chose to add, with your reasoning.</li>
+      <li><strong>Measurements.</strong> How you capture the measurements from the set above (blood pressure, heart rate, SpO2, temperature, respiratory rate, ECG), what you leave out and why, and which further ones you chose to add.</li>
       <li><strong>Architecture.</strong> Edge devices → fog node → MIS in the cloud via API. A diagram is mandatory.</li>
       <li><strong>Equipment list.</strong> A table with the columns: “Component&nbsp;/&nbsp;model”, “Purpose”, “Quantity”, “Approximate price, UAH”, “Shop link”, “Already available or to be purchased”. A total figure is required.</li>
       <li><strong>Software.</strong> Languages, frameworks, data format, processing on the fog node, security and personal data protection.</li>
@@ -591,7 +582,7 @@
   <div class="faq">
     <details>
       <summary>Can I enter on my own, without a team?</summary>
-      <p>No. The minimum is two people and the maximum is five. The kit combines hardware, software and integration work, so a division of roles is part of the rules.</p>
+      <p>No. The minimum is two people and the maximum is four. The kit combines hardware, software and integration work, so a division of roles is part of the rules.</p>
     </details>
     <details>
       <summary>Do we have to buy the equipment ourselves?</summary>
