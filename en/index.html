@@ -83,8 +83,8 @@
       <li><a href="#eligibility">Who can enter</a></li>
       <li><a href="#timeline">Timeline</a></li>
       <li><a href="#submit">What to submit</a></li>
-      <li><a href="#proposal">Proposal</a></li>
       <li><a href="#components">Components</a></li>
+      <li><a href="#proposal">Proposal</a></li>
       <li><a href="#equipment">Equipment</a></li>
       <li><a href="#api">MIS API</a></li>
       <li><a href="#criteria">Criteria</a></li>
@@ -299,6 +299,38 @@
   </div>
 </section>
 
+<section id="components" aria-labelledby="components-h">
+  <h2 id="components-h">Choosing components</h2>
+  <p>You do not have to build everything from low-level sensors. A ready-made device at a higher level — a blood pressure monitor, pulse oximeter, thermometer, scales, glucometer, portable ECG recorder — is perfectly acceptable and often the wiser choice: your time then goes into architecture and integration rather than into fighting the calibration of a raw signal.</p>
+  <p>There is one condition: <strong>there must be a way to get the data out</strong> of the device, without reverse engineering and without an agreement with the manufacturer.</p>
+  <div class="grid cols-2">
+    <div class="card">
+      <h3>What to look for</h3>
+      <ul>
+        <li>Standard Bluetooth LE profiles — see the <a href="https://www.bluetooth.com/specifications/specs/" rel="noopener">Bluetooth SIG specifications</a>: Blood Pressure, Pulse Oximeter, Health Thermometer, Weight Scale, Glucose. Any BLE library can read them.</li>
+        <li>An open serial or USB protocol with the frame format documented.</li>
+        <li>A documented manufacturer API or SDK that gives access to the raw measurements.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>What to avoid</h3>
+      <ul>
+        <li>Devices that hand their data only to the manufacturer's own app or cloud.</li>
+        <li>Devices with no technical documentation at all — they will consume the whole project.</li>
+        <li>Anything tied to a subscription or an account without which the device will not work.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note">
+    <h3>Instruments with proven accuracy are preferred</h3>
+    <p>Where a reading will inform a clinical decision, we <strong>strongly prefer</strong> a ready-made medical device whose measurement accuracy has been verified: in the EU that means <strong>CE</strong> marking under the medical devices regulation, in Ukraine the <strong>national conformity mark</strong> under the Technical Regulation on Medical Devices. A certified blood pressure monitor, pulse oximeter or thermometer removes a whole class of metrology questions, and your effort goes into architecture and integration instead.</p>
+    <p>This is a recommendation, not a requirement: a design of your own built on sensors is also accepted. In that case, describe in the proposal how you will verify accuracy — comparison against a certified instrument, repeatability, the error margins you expect.</p>
+  </div>
+
+  <p>Finding the specific models is your part of the work: the market moves faster than we can update this page. In the application, state <strong>exactly how</strong> you will get the data out of each device (BLE profile, API, serial port) — this is one of the key points when we judge whether the plan is realistic.</p>
+</section>
+
 <section id="proposal" aria-labelledby="proposal-h">
   <h2 id="proposal-h">Structure of the project proposal</h2>
   <p>Keep this numbering — the judges compare proposals section by section. The block below can be copied as a table of contents.</p>
@@ -366,41 +398,9 @@
   </div>
 </section>
 
-<section id="components" aria-labelledby="components-h">
-  <h2 id="components-h">Choosing components</h2>
-  <p>You do not have to build everything from low-level sensors. A ready-made device at a higher level — a blood pressure monitor, pulse oximeter, thermometer, scales, glucometer, portable ECG recorder — is perfectly acceptable and often the wiser choice: your time then goes into architecture and integration rather than into fighting the calibration of a raw signal.</p>
-  <p>There is one condition: <strong>there must be a way to get the data out</strong> of the device, without reverse engineering and without an agreement with the manufacturer.</p>
-  <div class="grid cols-2">
-    <div class="card">
-      <h3>What to look for</h3>
-      <ul>
-        <li>Standard Bluetooth LE profiles — see the <a href="https://www.bluetooth.com/specifications/specs/" rel="noopener">Bluetooth SIG specifications</a>: Blood Pressure, Pulse Oximeter, Health Thermometer, Weight Scale, Glucose. Any BLE library can read them.</li>
-        <li>An open serial or USB protocol with the frame format documented.</li>
-        <li>A documented manufacturer API or SDK that gives access to the raw measurements.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>What to avoid</h3>
-      <ul>
-        <li>Devices that hand their data only to the manufacturer's own app or cloud.</li>
-        <li>Devices with no technical documentation at all — they will consume the whole project.</li>
-        <li>Anything tied to a subscription or an account without which the device will not work.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="note">
-    <h3>Instruments with proven accuracy are preferred</h3>
-    <p>Where a reading will inform a clinical decision, we <strong>strongly prefer</strong> a ready-made medical device whose measurement accuracy has been verified: in the EU that means <strong>CE</strong> marking under the medical devices regulation, in Ukraine the <strong>national conformity mark</strong> under the Technical Regulation on Medical Devices. A certified blood pressure monitor, pulse oximeter or thermometer removes a whole class of metrology questions, and your effort goes into architecture and integration instead.</p>
-    <p>This is a recommendation, not a requirement: a design of your own built on sensors is also accepted. In that case, describe in the proposal how you will verify accuracy — comparison against a certified instrument, repeatability, the error margins you expect.</p>
-  </div>
-
-  <p>Finding the specific models is your part of the work: the market moves faster than we can update this page. In the application, state <strong>exactly how</strong> you will get the data out of each device (BLE profile, API, serial port) — this is one of the key points when we judge whether the plan is realistic.</p>
-</section>
-
 <section id="equipment" aria-labelledby="equipment-h">
   <h2 id="equipment-h">Equipment and budget</h2>
-  <p>The organisers purchase or fund components against approved applications; decisions are made once the Stage I results are announced, on the basis of the list given in the project proposal. The list must therefore be specific: model, quantity, price, shop link.</p>
+  <p>The organisers purchase or fund components against approved applications; decisions are made once the Stage I results are announced, on the basis of the list given in the project proposal.</p>
   <p><strong>The budget per team is set by the jury</strong>, depending on how well the list is justified and how demanding the design is.</p>
   <p>Preference goes to affordable components that are easy to obtain and to replace: the kit has to keep working in a community with no service centre nearby.</p>
 
@@ -482,7 +482,7 @@
 <section id="license" aria-labelledby="license-h">
   <h2 id="license-h">Licensing and rights in the results</h2>
   <p>You publish your code, schematics and documentation in an open repository.</p>
-  <p><strong>The work stays yours.</strong> You are the authors, your names are in the repository, and you can do whatever you like with the project, including making money from it. An open licence only lets other people learn from your solution and build on it, with a credit to you.</p>
+  <p><strong>The work stays yours.</strong> An open licence only lets other people learn from your solution and build on it, with a credit to you.</p>
 
   <div class="table-scroll">
     <table>
